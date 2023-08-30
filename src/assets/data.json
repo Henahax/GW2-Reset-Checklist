@@ -1,0 +1,186 @@
+{
+  "categories":[
+    {
+      "category" : "converters",
+      "categoryindex": "0",
+      "categoryname": "Converters"
+    },
+    {
+      "category" : "merchants",
+      "categoryindex": "1",
+      "categoryname": "Merchants"
+    },
+    {
+      "category" : "harvesting",
+      "categoryindex": "2",
+      "categoryname": "Harvesting"
+    },
+    {
+      "category" : "crafting",
+      "categoryindex": "3",
+      "categoryname": "Crafting"
+    },
+    {
+      "category" : "fractals",
+      "categoryindex": "4",
+      "categoryname": "Fractals"
+    },
+    {
+      "category" : "misc",
+      "categoryindex": "5",
+      "categoryname": "Miscellaneous"
+    },
+    {
+      "category" : "raids",
+      "categoryindex": "6",
+      "categoryname": "Raids"
+    }
+  ],
+
+  "items": [
+    {
+      "id": "Converters",
+      "name": "Converters",
+      "category": "converters",
+      "interval": "daily",
+      "icon": "https://wiki.guildwars2.com/images/9/96/Ley-Energy_Matter_Converter.png",
+      "info": "Currency and Crafting Marterial Converters"
+    },
+    {
+      "id": "AntiqueSummoningStones",
+      "name": "Antique Summoning Stones",
+      "category": "merchants",
+      "interval": "weekly",
+      "icon": "https://wiki.guildwars2.com/images/f/f6/Antique_Summoning_Stone.png",
+      "info": "Arborstone"
+    },
+    {
+      "id": "ChunkOfAncientAmbergris",
+      "name": "Chunk of Ancient Ambergris",
+      "category": "merchants",
+      "interval": "daily",
+      "icon": "https://wiki.guildwars2.com/images/2/25/Chunk_of_Ancient_Ambergris.png",
+      "info": "Arborstone"
+    },
+    {
+      "id": "HomeInstance",
+      "name": "Home Instance",
+      "category": "harvesting",
+      "interval": "daily",
+      "icon": "https://wiki.guildwars2.com/images/5/56/Home_Portal_Stone.png",
+      "info": "Charged Quartz Crystal, Harvesting Nodes, Chests"
+    },
+    {
+      "id": "GuildHall",
+      "name": "Guild Hall",
+      "category": "harvesting",
+      "interval": "daily",
+      "icon": "https://wiki.guildwars2.com/images/8/89/Guild_Hall_Obtained.png",
+      "info": "Harvesting Nodes, Merchants, Bartender Boosts"
+    },
+    {
+      "id": "DiscountedFractalEncryptionKeys",
+      "name": "Discounted Fractal Encryption Keys",
+      "category": "merchants",
+      "interval": "daily",
+      "icon": "https://wiki.guildwars2.com/images/f/f0/Fractal_Encryption_Key.png",
+      "info": "Mistlock Observatory / Mistlock Sanctuary"
+    },
+    {
+      "id": "DrizzlewoodMaterialDonations",
+      "name": "Drizzlewood Material Donations",
+      "category": "merchants",
+      "interval": "daily",
+      "icon": "https://wiki.guildwars2.com/images/6/6d/Quaestor_%28overhead_icon%29.png",
+      "info": "Drizzlewood Coast"
+    },
+    {
+      "id": "PactScoutsMappingMaterials",
+      "name": "Pact Scout's Mapping Materials",
+      "category": "merchants",
+      "interval": "daily",
+      "icon": "https://wiki.guildwars2.com/images/3/3c/Pact_Scout%27s_Mapping_Materials.png",
+      "info": "Pact Supply Network Agents"
+    },
+    {
+      "id": "AscendedCrafting",
+      "name": "Ascended Crafting",
+      "category": "crafting",
+      "interval": "daily",
+      "icon": "https://wiki.guildwars2.com/images/c/cf/Crafting_icon.png",
+      "info": "Mithrillium, Spirit Residue, Elonian Cord, Weaving Thread"
+    },
+    {
+      "id": "AltParking",
+      "name": "Alt-Parking",
+      "category": "misc",
+      "interval": "daily",
+      "icon": "https://wiki.guildwars2.com/images/7/70/Character_Slot_Expansion.png",
+      "info": "Open Chest with Alt-Charactes"
+    },
+    {
+      "id": "FractalsDailyChallenge",
+      "name": "Daily Challenge Mode Fractals",
+      "category": "fractals",
+      "interval": "daily",
+      "icon": "https://wiki.guildwars2.com/images/b/b8/Unstable_Fractal_Essence.png",
+      "info": "Nightmare, Shattered Observatory, Sunqua Peak Fractal, Silent Surf Fractal"
+    },
+    {
+      "id": "RaidW1",
+      "name": "Spirit Vale",
+      "category": "raids",
+      "interval": "weekly",
+      "icon": "https://wiki.guildwars2.com/images/5/54/Mini_Sabetha.png",
+      "info": "Wing 1"
+    },
+    {
+      "id": "RaidW2",
+      "name": "Salvation Pass",
+      "category": "raids",
+      "interval": "weekly",
+      "icon": "https://wiki.guildwars2.com/images/5/5d/Mini_Matthias_Abomination.png",
+      "info": "Wing 2"
+    },
+    {
+      "id": "RaidW3",
+      "name": "Stronghold of the Faithful",
+      "category": "raids",
+      "interval": "weekly",
+      "icon": "https://wiki.guildwars2.com/images/4/4b/Mini_Xera.png",
+      "info": "Wing 3"
+    },
+    {
+      "id": "RaidW4",
+      "name": "Bastion of the Penitent",
+      "category": "raids",
+      "interval": "weekly",
+      "icon": "https://wiki.guildwars2.com/images/e/e0/Mini_Ragged_White_Mantle_Figurehead.png",
+      "info": "Wing 4"
+    },
+    {
+      "id": "RaidW5",
+      "name": "Hall of Chains",
+      "category": "raids",
+      "interval": "weekly",
+      "icon": "https://wiki.guildwars2.com/images/e/e4/Mini_Dhuum.png",
+      "info": "Wing 5"
+    },
+    {
+      "id": "RaidW6",
+      "name": "Mythwright Gambit",
+      "category": "raids",
+      "interval": "weekly",
+      "icon": "https://wiki.guildwars2.com/images/f/f2/Mini_Qadim.png",
+      "info": "Wing 6"
+    },
+    {
+      "id": "RaidW7",
+      "name": "The Key of Ahdashim",
+      "category": "raids",
+      "interval": "weekly",
+      "icon": "https://wiki.guildwars2.com/images/8/8b/Mini_Qadim_the_Peerless.png",
+      "info": "Wing 7"
+    }
+  ]
+}
