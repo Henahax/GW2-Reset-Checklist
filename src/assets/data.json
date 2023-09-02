@@ -95,6 +95,14 @@
       "info": "Drizzlewood Coast"
     },
     {
+      "id": "ProvisionerTokens",
+      "name": "Provisioner Tokens",
+      "category": "merchants",
+      "interval": "daily",
+      "icon": "https://wiki.guildwars2.com/images/9/9d/Provisioner_Token.png",
+      "info": "Central Tyria & Horn of Maguuma"
+    },
+    {
       "id": "PactScoutsMappingMaterials",
       "name": "Pact Scout's Mapping Materials",
       "category": "merchants",
