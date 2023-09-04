@@ -44,7 +44,8 @@
       "category": "converters",
       "interval": "daily",
       "icon": "https://wiki.guildwars2.com/images/9/96/Ley-Energy_Matter_Converter.png",
-      "info": "Currency and Crafting Marterial Converters"
+      "info": "Currency and Crafting Marterial Converters",
+      "link": "https://wiki.guildwars2.com/wiki/Converter"
     },
     {
       "id": "AntiqueSummoningStones",
@@ -52,7 +53,8 @@
       "category": "merchants",
       "interval": "weekly",
       "icon": "https://wiki.guildwars2.com/images/f/f6/Antique_Summoning_Stone.png",
-      "info": "Arborstone"
+      "info": "Arborstone",
+      "link": "https://wiki.guildwars2.com/wiki/Leivas#Weekly_Sales"
     },
     {
       "id": "ChunkOfAncientAmbergris",
@@ -60,7 +62,8 @@
       "category": "merchants",
       "interval": "daily",
       "icon": "https://wiki.guildwars2.com/images/2/25/Chunk_of_Ancient_Ambergris.png",
-      "info": "Arborstone"
+      "info": "Arborstone",
+      "link": "https://wiki.guildwars2.com/wiki/Taro_Everclaw"
     },
     {
       "id": "HomeInstance",
@@ -68,7 +71,8 @@
       "category": "harvesting",
       "interval": "daily",
       "icon": "https://wiki.guildwars2.com/images/5/56/Home_Portal_Stone.png",
-      "info": "Charged Quartz Crystal, Harvesting Nodes, Chests"
+      "info": "Charged Quartz Crystal, Harvesting Nodes, Chests",
+      "link": "https://wiki.guildwars2.com/wiki/Home_instance#List_of_home_instance_upgrades"
     },
     {
       "id": "GuildHall",
@@ -76,7 +80,8 @@
       "category": "harvesting",
       "interval": "daily",
       "icon": "https://wiki.guildwars2.com/images/8/89/Guild_Hall_Obtained.png",
-      "info": "Harvesting Nodes, Merchants, Bartender Boosts"
+      "info": "Harvesting Nodes, Merchants, Bartender Boosts",
+      "link": "https://wiki.guildwars2.com/wiki/Guild_hall#Features"
     },
     {
       "id": "DiscountedFractalEncryptionKeys",
@@ -84,7 +89,8 @@
       "category": "merchants",
       "interval": "daily",
       "icon": "https://wiki.guildwars2.com/images/f/f0/Fractal_Encryption_Key.png",
-      "info": "Mistlock Observatory / Mistlock Sanctuary"
+      "info": "Mistlock Observatory / Mistlock Sanctuary",
+      "link": "https://wiki.guildwars2.com/wiki/Deeply_Discounted_Fractal_Encryption_Key"
     },
     {
       "id": "DrizzlewoodMaterialDonations",
@@ -92,7 +98,8 @@
       "category": "merchants",
       "interval": "daily",
       "icon": "https://wiki.guildwars2.com/images/6/6d/Quaestor_%28overhead_icon%29.png",
-      "info": "Drizzlewood Coast"
+      "info": "Drizzlewood Coast",
+      "link": "https://fast.farming-community.eu/open-world/drizzlewood-material-donation"
     },
     {
       "id": "ProvisionerTokens",
@@ -100,7 +107,8 @@
       "category": "merchants",
       "interval": "daily",
       "icon": "https://wiki.guildwars2.com/images/9/9d/Provisioner_Token.png",
-      "info": "Central Tyria & Horn of Maguuma"
+      "info": "Central Tyria & Horn of Maguuma",
+      "link": "https://wiki.guildwars2.com/wiki/Faction_Provisioner#Faction_Provisioners"
     },
     {
       "id": "PactScoutsMappingMaterials",
@@ -108,7 +116,8 @@
       "category": "merchants",
       "interval": "daily",
       "icon": "https://wiki.guildwars2.com/images/3/3c/Pact_Scout%27s_Mapping_Materials.png",
-      "info": "Pact Supply Network Agents"
+      "info": "Pact Supply Network Agents",
+      "link": "https://wiki.guildwars2.com/wiki/Pact_Supply_Network_Agent#Locations"
     },
     {
       "id": "AscendedCrafting",
@@ -116,7 +125,8 @@
       "category": "crafting",
       "interval": "daily",
       "icon": "https://wiki.guildwars2.com/images/c/cf/Crafting_icon.png",
-      "info": "Mithrillium, Spirit Residue, Elonian Cord, Weaving Thread"
+      "info": "Mithrillium, Spirit Residue, Elonian Cord, Weaving Thread",
+      "link": "https://wiki.guildwars2.com/wiki/Server_reset#Crafted_items"
     },
     {
       "id": "AltParking",
@@ -124,7 +134,8 @@
       "category": "misc",
       "interval": "daily",
       "icon": "https://wiki.guildwars2.com/images/7/70/Character_Slot_Expansion.png",
-      "info": "Open Chest with Alt-Charactes"
+      "info": "Open Chest with Alt-Charactes",
+      "link": "https://fast.farming-community.eu/open-world/alt-parking"
     },
     {
       "id": "FractalsDailyChallenge",
@@ -132,7 +143,8 @@
       "category": "fractals",
       "interval": "daily",
       "icon": "https://wiki.guildwars2.com/images/b/b8/Unstable_Fractal_Essence.png",
-      "info": "Nightmare, Shattered Observatory, Sunqua Peak Fractal, Silent Surf Fractal"
+      "info": "Nightmare, Shattered Observatory, Sunqua Peak Fractal, Silent Surf Fractal",
+      "link": "https://wiki.guildwars2.com/wiki/Challenge_Mote#Fractals_of_the_Mists"
     },
     {
       "id": "RaidW1",
@@ -140,7 +152,8 @@
       "category": "raids",
       "interval": "weekly",
       "icon": "https://wiki.guildwars2.com/images/5/54/Mini_Sabetha.png",
-      "info": "Wing 1"
+      "info": "Wing 1",
+      "link": ""
     },
     {
       "id": "RaidW2",
@@ -148,7 +161,8 @@
       "category": "raids",
       "interval": "weekly",
       "icon": "https://wiki.guildwars2.com/images/5/5d/Mini_Matthias_Abomination.png",
-      "info": "Wing 2"
+      "info": "Wing 2",
+      "link": ""
     },
     {
       "id": "RaidW3",
@@ -156,7 +170,8 @@
       "category": "raids",
       "interval": "weekly",
       "icon": "https://wiki.guildwars2.com/images/4/4b/Mini_Xera.png",
-      "info": "Wing 3"
+      "info": "Wing 3",
+      "link": ""
     },
     {
       "id": "RaidW4",
@@ -164,7 +179,8 @@
       "category": "raids",
       "interval": "weekly",
       "icon": "https://wiki.guildwars2.com/images/e/e0/Mini_Ragged_White_Mantle_Figurehead.png",
-      "info": "Wing 4"
+      "info": "Wing 4",
+      "link": ""
     },
     {
       "id": "RaidW5",
@@ -172,7 +188,8 @@
       "category": "raids",
       "interval": "weekly",
       "icon": "https://wiki.guildwars2.com/images/e/e4/Mini_Dhuum.png",
-      "info": "Wing 5"
+      "info": "Wing 5",
+      "link": ""
     },
     {
       "id": "RaidW6",
@@ -180,7 +197,8 @@
       "category": "raids",
       "interval": "weekly",
       "icon": "https://wiki.guildwars2.com/images/f/f2/Mini_Qadim.png",
-      "info": "Wing 6"
+      "info": "Wing 6",
+      "link": ""
     },
     {
       "id": "RaidW7",
@@ -188,7 +206,8 @@
       "category": "raids",
       "interval": "weekly",
       "icon": "https://wiki.guildwars2.com/images/8/8b/Mini_Qadim_the_Peerless.png",
-      "info": "Wing 7"
+      "info": "Wing 7",
+      "link": ""
     }
   ]
 }

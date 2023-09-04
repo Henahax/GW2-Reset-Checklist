@@ -76,6 +76,12 @@ h1{
     filter: brightness(0.75);
   }
 
+  .settingsHeader{
+    margin: 1rem auto 1rem auto;
+    text-align: center;
+  }
+
+
 #settings ul{
     margin: 0 auto 0 auto;
     padding: 1rem;
@@ -134,9 +140,24 @@ h1{
     margin: auto 0.25rem auto 0.25rem;
 }
 
-.interval{
+.link{
     float: right;
     margin: auto 0 auto auto;
+    opacity: 0.5;
+    font-size: 0.75rem;
+    display: inline-flex;
+    color: #dee2e6;
+    text-decoration: none;
+    border-radius: 0.25rem;
+}
+
+.link:hover{
+    opacity: 1;
+}
+
+.interval{
+    float: right;
+    margin: auto 0 auto 0.5rem;
     opacity: 0.5;
     font-size: 0.75rem;
     display: inline-flex;
@@ -157,6 +178,10 @@ h1{
 
   .item:has(input[type="checkbox"]:checked) .text .info{
     font-size: 0.5rem;
+  }
+
+  .item:has(input[type="checkbox"]:checked) .link{
+    transform: scale(0.75);
   }
 
   .item:has(input[type="checkbox"]:checked) .interval{
