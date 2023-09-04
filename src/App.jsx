@@ -166,7 +166,7 @@ function App() {
     const nextWeek = new Date(now);
 
     nextWeek.setDate(
-      nextWeek.getDate() + ((1 + 7 - nextWeek.getDay()) % 7 || 7)
+      nextWeek.getDate() + ((7 - nextWeek.getDay()) % 7 || 7)
     );
     nextWeek.setUTCDate(nextWeek.getUTCDate() + 1);
     nextWeek.setUTCHours(7, 30, 0, 0);
