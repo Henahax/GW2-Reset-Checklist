@@ -1,0 +1,128 @@
+[
+    {
+        "id": "Converters",
+        "name": "Converters",
+        "category": "converters",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/9/96/Ley-Energy_Matter_Converter.png",
+        "info": "Currency and Crafting Marterial Converters",
+        "link": "https://wiki.guildwars2.com/wiki/Converter"
+      },
+      {
+        "id": "AntiqueSummoningStones",
+        "name": "Antique Summoning Stones",
+        "category": "merchants",
+        "interval": "weekly",
+        "icon": "https://wiki.guildwars2.com/images/f/f6/Antique_Summoning_Stone.png",
+        "info": "Arborstone",
+        "link": "https://wiki.guildwars2.com/wiki/Leivas#Weekly_Sales"
+      },
+      {
+        "id": "ChunkOfAncientAmbergris",
+        "name": "Chunk of Ancient Ambergris",
+        "category": "merchants",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/2/25/Chunk_of_Ancient_Ambergris.png",
+        "info": "Arborstone",
+        "link": "https://wiki.guildwars2.com/wiki/Taro_Everclaw"
+      },
+      {
+        "id": "HomeInstance",
+        "name": "Home Instance",
+        "category": "harvesting",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/5/56/Home_Portal_Stone.png",
+        "info": "Charged Quartz Crystal, Harvesting Nodes, Chests",
+        "link": "https://wiki.guildwars2.com/wiki/Home_instance#List_of_home_instance_upgrades"
+      },
+      {
+        "id": "GuildHall",
+        "name": "Guild Hall",
+        "category": "harvesting",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/8/89/Guild_Hall_Obtained.png",
+        "info": "Harvesting Nodes, Merchants, Bartender Boosts",
+        "link": "https://wiki.guildwars2.com/wiki/Guild_hall#Features"
+      },
+      {
+        "id": "DiscountedFractalEncryptionKeys",
+        "name": "Discounted Fractal Encryption Keys",
+        "category": "merchants",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/f/f0/Fractal_Encryption_Key.png",
+        "info": "Mistlock Observatory / Mistlock Sanctuary",
+        "link": "https://wiki.guildwars2.com/wiki/Deeply_Discounted_Fractal_Encryption_Key"
+      },
+      {
+        "id": "DrizzlewoodMaterialDonations",
+        "name": "Drizzlewood Material Donations",
+        "category": "merchants",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/6/6d/Quaestor_%28overhead_icon%29.png",
+        "info": "Drizzlewood Coast",
+        "link": "https://fast.farming-community.eu/open-world/drizzlewood-material-donation"
+      },
+      {
+        "id": "ProvisionerTokens",
+        "name": "Provisioner Tokens",
+        "category": "merchants",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/9/9d/Provisioner_Token.png",
+        "info": "Central Tyria & HoT & SotO",
+        "link": "https://wiki.guildwars2.com/wiki/Faction_Provisioner#Faction_Provisioners"
+      },
+      {
+        "id": "PactScoutsMappingMaterials",
+        "name": "Pact Scout's Mapping Materials",
+        "category": "merchants",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/3/3c/Pact_Scout%27s_Mapping_Materials.png",
+        "info": "Pact Supply Network Agents",
+        "link": "https://wiki.guildwars2.com/wiki/Pact_Supply_Network_Agent#Locations"
+      },
+      {
+        "id": "AscendedCrafting",
+        "name": "Ascended Crafting",
+        "category": "crafting",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/c/cf/Crafting_icon.png",
+        "info": "Mithrillium, Spirit Residue, Elonian Cord, Weaving Thread",
+        "link": "https://wiki.guildwars2.com/wiki/Server_reset#Crafted_items"
+      },
+      {
+        "id": "AltParking",
+        "name": "Alt-Parking",
+        "category": "misc",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/7/70/Character_Slot_Expansion.png",
+        "info": "Open Chest with Alt-Charactes",
+        "link": "https://fast.farming-community.eu/open-world/alt-parking"
+      },
+      {
+        "id": "MistHardenedLockboxKey",
+        "name": "Mist-Hardened Lockbox Key",
+        "category": "merchants",
+        "interval": "weekly",
+        "icon": "https://wiki.guildwars2.com/images/a/ad/Mist-Hardened_Lockbox_Key.png",
+        "info": "Dugan on WvW-Maps",
+        "link": "https://wiki.guildwars2.com/wiki/Mist-Hardened_Lockbox_Key"
+      },
+      {
+        "id": "BlackLionChestKey",
+        "name": "Black Lion Chest Key",
+        "category": "misc",
+        "interval": "weekly",
+        "icon": "https://wiki.guildwars2.com/images/1/15/Black_Lion_Chest_Key.png",
+        "info": "Level 10 Human Story",
+        "link": "https://www.youtube.com/watch?v=1KdasTB2rNM"
+      },
+      {
+        "id": "VigilEmissaryChest",
+        "name": "Vigil Emissary Chest",
+        "category": "misc",
+        "interval": "weekly",
+        "icon": "https://wiki.guildwars2.com/images/e/eb/Community_Goal_Reward-_Tier_5.png",
+        "info": "Eye of the North after IBS Strike Missions",
+        "link": "https://wiki.guildwars2.com/wiki/Vigil_Emissary_Chest"
+      }
+]

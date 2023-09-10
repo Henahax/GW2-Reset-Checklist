@@ -208,6 +208,15 @@
       "icon": "https://wiki.guildwars2.com/images/8/8b/Mini_Qadim_the_Peerless.png",
       "info": "Wing 7",
       "link": ""
+    },
+    {
+      "id": "wvwkey",
+      "name": "wvwkey",
+      "category": "vendor",
+      "interval": "weekly",
+      "icon": "",
+      "info": "",
+      "link": ""
     }
   ]
 }

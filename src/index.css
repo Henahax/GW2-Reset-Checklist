@@ -121,6 +121,11 @@ h1{
     gap: 1rem;
 }
 
+.category:not(:has(ul):has(li))
+{
+  display: none;
+}
+
 .item{
     display: inline-flex;
 }

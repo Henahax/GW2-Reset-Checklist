@@ -1,308 +1,8 @@
 import "./App.css";
-import data from "./assets/data.json";
+import categories from "./assets/categories.json";
+import items from "./assets/items.json";
 
 function App() {
-  var items = combinestuff();
-
-  var categories = getCategories(items);
-
-  function getCategories(itmes) {
-    categories = [];
-    itmes
-      .filter(function (item) {
-        var cookieValue = getCookieValue("setting" + item.id);
-        if (cookieValue == "false") {
-          return false;
-        } else {
-          return true;
-        }
-      })
-      .sort((a, b) => a.categoryindex.localeCompare(b.categoryindex))
-      .forEach((element) => {
-        if (categories.some((e) => e.category === element.category)) {
-          return;
-        } else {
-          var category = {
-            category: element.category,
-            categoryindex: element.categoryindex,
-            categoryname: element.categoryname,
-          };
-          categories.push(category);
-        }
-      });
-    return categories;
-  }
-
-  function mergeJSON(source1, source2) {
-    /*
-     * Properties from the Souce1 object will be copied to Source2 Object.
-     * Note: This method will return a new merged object, Source1 and Source2 original values will not be replaced.
-     * */
-    var mergedJSON = Object.create(source2); // Copying Source2 to a new Object
-
-    for (var attrname in source1) {
-      if (mergedJSON.hasOwnProperty(attrname)) {
-        if (
-          source1[attrname] != null &&
-          source1[attrname].constructor == Object
-        ) {
-          /*
-           * Recursive call if the property is an object,
-           * Iterate the object and set all properties of the inner object.
-           */
-          mergedJSON[attrname] = mergeJSON(
-            source1[attrname],
-            mergedJSON[attrname]
-          );
-        }
-      } else {
-        //else copy the property from source1
-        mergedJSON[attrname] = source1[attrname];
-      }
-    }
-
-    return mergedJSON;
-  }
-
-  function combinestuff() {
-    // Create a map of categories for quick lookup
-    const categoryMap = new Map(
-      data.categories.map((category) => [category.category, category])
-    );
-
-    // Merge categories into items
-    const mergedItems = data.items.map((item) => ({
-      ...item,
-      ...categoryMap.get(item.category),
-    }));
-
-    // Update the "items" array with merged items
-    data.items = mergedItems;
-
-    return data.items;
-  }
-
-  function Category(category) {
-    return (
-      <div className="category">
-        <h2>{category.categoryname}</h2>
-        <ul>
-          {items
-            .filter(function (item) {
-              return item.category === category.category;
-            })
-            .filter(function (item) {
-              if (getCookieValue("setting" + item.id) === "false") {
-                return false;
-              } else {
-                return true;
-              }
-            })
-            .sort((a, b) => a.interval.localeCompare(b.interval))
-            .map((item) => (
-              <Item item={item} />
-            ))}
-        </ul>
-      </div>
-    );
-  }
-
-  function Item(item) {
-    var checkboxId = item.item.id + "checkbox";
-    return (
-      <li id={item.item.id} className="item form-check">
-        <input
-          type="checkbox"
-          id={checkboxId}
-          onChange={handleCheckboxChange}
-          defaultChecked={getCookieValue(item.item.id) === "true"}
-        ></input>
-        <label htmlFor={checkboxId}>
-          <img src={item.item.icon}></img>
-          <div className="text">
-            <div className="name">{item.item.name}</div>
-            <div className="info">{item.item.info}</div>
-          </div>
-
-          <a className="link" href={item.item.link}>
-            {item.item.link.length > 0 && (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-info-circle"
-                viewBox="0 0 16 16"
-              >
-                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-              </svg>
-            )}
-          </a>
-
-          <div className="interval">{item.item.interval}</div>
-        </label>
-      </li>
-    );
-  }
-
-  function SettingsItem(item) {
-    var checkboxId = item.item.id + "settingcheckbox";
-
-    return (
-      <li id={"setting" + item.item.id} className="settingsItem form-check">
-        <input
-          type="checkbox"
-          id={"setting" + checkboxId}
-          onChange={handleCheckboxChangeSettings}
-          defaultChecked={
-            !(getCookieValue("setting" + item.item.id) == "false")
-          }
-        ></input>
-        <label htmlFor={"setting" + checkboxId}>
-          <div className="text">
-            <div className="name">{item.item.name}</div>
-            <div className="info">{item.item.info}</div>
-          </div>
-          <div className="interval">{item.item.interval}</div>
-        </label>
-      </li>
-    );
-  }
-
-  function getUTCTimeForStartOfNextDay() {
-    const now = new Date();
-    const tomorrow = new Date(now);
-    tomorrow.setUTCDate(tomorrow.getUTCDate() + 1);
-    tomorrow.setUTCHours(0, 0, 0, 0);
-    return tomorrow;
-  }
-
-  function getUTCTimeForStartOfNextWeek() {
-    const now = new Date();
-    const nextWeek = new Date(now);
-
-    nextWeek.setDate(nextWeek.getDate() + ((7 - nextWeek.getDay()) % 7 || 7));
-    nextWeek.setUTCDate(nextWeek.getUTCDate() + 1);
-    nextWeek.setUTCHours(7, 30, 0, 0);
-
-    return nextWeek;
-  }
-
-  function setCookie(name, value, expires) {
-    document.cookie = `${name}=${value}; expires=${expires}; path=/`;
-  }
-
-  function getCookieValue(cookieName) {
-    const cookies = document.cookie.split("; "); // Split cookies string into an array
-
-    for (const cookie of cookies) {
-      const [name, value] = cookie.split("=");
-      if (name === cookieName) {
-        return decodeURIComponent(value); // Decode the value (if it was encoded)
-      }
-    }
-    return null; // Cookie not found
-  }
-
-  function handleCheckboxChange(event) {
-    var interval = data.items.filter(function (item) {
-      return item.id === event.target.parentNode.id;
-    })[0].interval;
-
-    var time = null;
-
-    if (interval === "daily") {
-      time = getUTCTimeForStartOfNextDay().toUTCString();
-    } else if (interval === "weekly") {
-      time = getUTCTimeForStartOfNextWeek().toUTCString();
-    }
-
-    setCookie(event.target.parentNode.id, event.target.checked, time);
-  }
-
-  function handleCheckboxChangeSettings(event) {
-    var date = new Date();
-    date.setFullYear(date.getFullYear() + 100);
-    date = date.toUTCString();
-
-    setCookie(event.target.parentNode.id, event.target.checked, date);
-  }
-
-  function Timer(props) {
-    // Update the count down every 1 second
-    var x = setInterval(function () {
-      // Get today's date and time
-      var now = new Date().getTime();
-
-      // Find the distance between now and the count down date
-      var distance = props.props.countDownDate - now;
-
-      // Time calculations for days, hours, minutes and seconds
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      var countdownString = "";
-      var notFirst = false;
-      if (days > 0) {
-        countdownString += days + ":";
-        notFirst = true;
-      }
-      if (days > 0 || hours > 0) {
-        if (notFirst) {
-          countdownString += zeroPad(hours, 2) + ":";
-        } else {
-          countdownString += hours + ":";
-        }
-        notFirst = true;
-      }
-      if (days > 0 || hours > 0 || minutes > 0) {
-        if (notFirst) {
-          countdownString += zeroPad(minutes, 2) + ":";
-        } else {
-          countdownString += minutes + ":";
-        }
-        notFirst = true;
-      }
-      if (days > 0 || hours > 0 || minutes > 0 || seconds > 0) {
-        if (notFirst) {
-          countdownString += zeroPad(seconds, 2);
-        } else {
-          countdownString += seconds;
-        }
-        notFirst = true;
-      }
-
-      document.getElementById(props.props.element).innerHTML = countdownString;
-
-      // If the count down is finished, write some text
-      if (distance < 0) {
-        clearInterval(x);
-        document.getElementById(props.props.element).innerHTML = "refresh site";
-      }
-    }, 1000);
-
-    return <div id={props.props.element} className="timer"></div>;
-  }
-
-  function zeroPad(num, places) {
-    var zero = places - num.toString().length + 1;
-    return Array(+(zero > 0 && zero)).join("0") + num;
-  }
-
-  function toggleSettings() {
-    var settings = document.getElementById("settings");
-    if (settings.classList.contains("hide")) {
-      settings.classList.remove("hide");
-    } else {
-      location.reload();
-    }
-  }
-
   let dateDaily = getUTCTimeForStartOfNextDay();
   let propsDaily = { element: "timerDaily", countDownDate: dateDaily };
 
@@ -312,7 +12,9 @@ function App() {
   return (
     <>
       <div id="settings" className="hide">
-        <div className="settingsHeader">Uncheck items you do not care about tracking!</div>
+        <div className="settingsHeader">
+          Uncheck items you do not care about tracking!
+        </div>
         <ul>
           {items
             .sort((a, b) => a.category.localeCompare(b.category))
@@ -354,9 +56,221 @@ function App() {
           </button>
         </div>
       </header>
-      <div>{categories.map((item) => Category(item))}</div>
+
+      <div id="categories">
+        {categories.map((category) => (
+          <div className="category">
+            <h2>{category.name}</h2>
+            <ul>
+              {items
+                .filter(function (item) {
+                  return item.category == category.id;
+                })
+                .filter(function (item) {
+                  var cookieValue = getCookieValue("setting" + item.id);
+                  if (cookieValue == "false") {
+                    return false;
+                  } else {
+                    return true;
+                  }
+                })
+                .sort((a, b) => a.interval.localeCompare(b.interval))
+                .map((item) => (
+                  <li className="item" id={item.id}>
+                    <input
+                      type="checkbox"
+                      id={item.id + "checkbox"}
+                      onChange={handleCheckboxChange}
+                      defaultChecked={getCookieValue(item.id) === "true"}
+                    ></input>
+                    <label htmlFor={item.id + "checkbox"}>
+                      <img src={item.icon}></img>
+                      <div className="text">
+                        <div className="name">{item.name}</div>
+                        <div className="info">{item.info}</div>
+                      </div>
+                      <a className="link" href={item.link}>
+                        {item.link.length > 0 && (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            className="bi bi-info-circle"
+                            viewBox="0 0 16 16"
+                          >
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                            <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                          </svg>
+                        )}
+                      </a>
+                      <div className="interval">{item.interval}</div>
+                    </label>
+                  </li>
+                ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <div id="footer"></div>
     </>
   );
+}
+
+function SettingsItem(item) {
+  var checkboxId = item.item.id + "settingcheckbox";
+
+  return (
+    <li id={"setting" + item.item.id} className="settingsItem form-check">
+      <input
+        type="checkbox"
+        id={"setting" + checkboxId}
+        onChange={handleCheckboxChangeSettings}
+        defaultChecked={!(getCookieValue("setting" + item.item.id) == "false")}
+      ></input>
+      <label htmlFor={"setting" + checkboxId}>
+        <div className="text">
+          <div className="name">{item.item.name}</div>
+          <div className="info">{item.item.info}</div>
+        </div>
+        <div className="interval">{item.item.interval}</div>
+      </label>
+    </li>
+  );
+}
+
+function handleCheckboxChangeSettings(event) {
+  var date = new Date();
+  date.setFullYear(date.getFullYear() + 100);
+  date = date.toUTCString();
+
+  setCookie(event.target.parentNode.id, event.target.checked, date);
+}
+
+function Timer(props) {
+  // Update the count down every 1 second
+  var x = setInterval(function () {
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    var distance = props.props.countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    var countdownString = "";
+    var notFirst = false;
+    if (days > 0) {
+      countdownString += days + ":";
+      notFirst = true;
+    }
+    if (days > 0 || hours > 0) {
+      if (notFirst) {
+        countdownString += zeroPad(hours, 2) + ":";
+      } else {
+        countdownString += hours + ":";
+      }
+      notFirst = true;
+    }
+    if (days > 0 || hours > 0 || minutes > 0) {
+      if (notFirst) {
+        countdownString += zeroPad(minutes, 2) + ":";
+      } else {
+        countdownString += minutes + ":";
+      }
+      notFirst = true;
+    }
+    if (days > 0 || hours > 0 || minutes > 0 || seconds > 0) {
+      if (notFirst) {
+        countdownString += zeroPad(seconds, 2);
+      } else {
+        countdownString += seconds;
+      }
+      notFirst = true;
+    }
+
+    document.getElementById(props.props.element).innerHTML = countdownString;
+
+    // If the count down is finished, write some text
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById(props.props.element).innerHTML = "refresh site";
+    }
+  }, 1000);
+
+  return <div id={props.props.element} className="timer"></div>;
+}
+
+function toggleSettings() {
+  var settings = document.getElementById("settings");
+  if (settings.classList.contains("hide")) {
+    settings.classList.remove("hide");
+  } else {
+    location.reload();
+  }
+}
+
+function zeroPad(num, places) {
+  var zero = places - num.toString().length + 1;
+  return Array(+(zero > 0 && zero)).join("0") + num;
+}
+
+function handleCheckboxChange(event) {
+  var interval = items.filter(function (item) {
+    return item.id === event.target.parentNode.id;
+  })[0].interval;
+
+  var time = null;
+
+  if (interval === "daily") {
+    time = getUTCTimeForStartOfNextDay().toUTCString();
+  } else if (interval === "weekly") {
+    time = getUTCTimeForStartOfNextWeek().toUTCString();
+  }
+
+  setCookie(event.target.parentNode.id, event.target.checked, time);
+}
+
+function setCookie(name, value, expires) {
+  document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+}
+
+function getCookieValue(cookieName) {
+  const cookies = document.cookie.split("; "); // Split cookies string into an array
+
+  for (const cookie of cookies) {
+    const [name, value] = cookie.split("=");
+    if (name === cookieName) {
+      return decodeURIComponent(value); // Decode the value (if it was encoded)
+    }
+  }
+  return null; // Cookie not found
+}
+
+function getUTCTimeForStartOfNextDay() {
+  const now = new Date();
+  const tomorrow = new Date(now);
+  tomorrow.setUTCDate(tomorrow.getUTCDate() + 1);
+  tomorrow.setUTCHours(0, 0, 0, 0);
+  return tomorrow;
+}
+
+function getUTCTimeForStartOfNextWeek() {
+  const now = new Date();
+  const nextWeek = new Date(now);
+
+  nextWeek.setDate(nextWeek.getDate() + ((7 - nextWeek.getDay()) % 7 || 7));
+  nextWeek.setUTCDate(nextWeek.getUTCDate() + 1);
+  nextWeek.setUTCHours(7, 30, 0, 0);
+
+  return nextWeek;
 }
 
 export default App;

@@ -1,0 +1,67 @@
+[
+    {
+        "id" : "converters",
+        "index": "0",
+        "name": "Converters"
+      },
+      {
+        "id" : "merchants",
+        "index": "1",
+        "name": "Merchants"
+      },
+      {
+        "id" : "harvesting",
+        "index": "2",
+        "name": "Harvesting"
+      },
+      {
+        "id" : "crafting",
+        "index": "3",
+        "name": "Crafting"
+      },
+      {
+        "id" : "fractals",
+        "index": "4",
+        "name": "Fractals"
+      },
+      {
+        "id" : "misc",
+        "index": "99",
+        "name": "Miscellaneous"
+      },
+      {
+        "id" : "wing1",
+        "index": "11",
+        "name": "Spirit Vale"
+      },
+      {
+        "id" : "wing2",
+        "index": "12",
+        "name": "Salvation Pass"
+      },
+      {
+        "id" : "wing3",
+        "index": "13",
+        "name": "Stronghold of the Faithful"
+      },
+      {
+        "id" : "wing4",
+        "index": "14",
+        "name": "Bastion of the Penitent"
+      },
+      {
+        "id" : "wing5",
+        "index": "15",
+        "name": "Hall of Chains"
+      },
+      {
+        "id" : "wing6",
+        "index": "16",
+        "name": "Mythwright Gambit"
+      },
+      {
+        "id" : "wing7",
+        "index": "17",
+        "name": "The Key of Ahdashim"
+      }
+]
