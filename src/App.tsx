@@ -8,22 +8,8 @@ function App() {
 
   let dateWeekly = getUTCTimeForStartOfNextWeek();
   let propsWeekly = { element: "timerWeekly", countDownDate: dateWeekly };
-
   return (
     <>
-      <div id="settings" className="hide">
-        <div className="settingsHeader">
-          Uncheck items you do not care about tracking!
-        </div>
-        <ul>
-          {items
-            .sort((a, b) => a.category.localeCompare(b.category))
-            .sort((c, d) => c.interval.localeCompare(d.interval))
-            .map((item) => (
-              <SettingsItem item={item} />
-            ))}
-        </ul>
-      </div>
       <header>
         <div className="titles">
           <h1 className="title">Checklist</h1>
@@ -55,6 +41,19 @@ function App() {
             </svg>
           </button>
         </div>
+        <div id="settings" className="hide">
+        <div className="settingsHeader">
+          Uncheck items you do not care about tracking!
+        </div>
+        <ul>
+          {items
+            .sort((a, b) => a.category.localeCompare(b.category))
+            .sort((c, d) => c.interval.localeCompare(d.interval))
+            .map((item) => (
+              <SettingsItem item={item} />
+            ))}
+        </ul>
+      </div>
       </header>
 
       <div id="categories">
@@ -76,37 +75,7 @@ function App() {
                 })
                 .sort((a, b) => a.interval.localeCompare(b.interval))
                 .map((item) => (
-                  <li className="item" id={item.id}>
-                    <input
-                      type="checkbox"
-                      id={item.id + "checkbox"}
-                      onChange={handleCheckboxChange}
-                      defaultChecked={getCookieValue(item.id) === "true"}
-                    ></input>
-                    <label htmlFor={item.id + "checkbox"}>
-                      <img src={item.icon}></img>
-                      <div className="text">
-                        <div className="name">{item.name}</div>
-                        <div className="info">{item.info}</div>
-                      </div>
-                      <a className="link" href={item.link}>
-                        {item.link.length > 0 && (
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="currentColor"
-                            className="bi bi-info-circle"
-                            viewBox="0 0 16 16"
-                          >
-                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                            <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                          </svg>
-                        )}
-                      </a>
-                      <div className="interval">{item.interval}</div>
-                    </label>
-                  </li>
+                  <Item item={item}/>
                 ))}
             </ul>
           </div>
@@ -118,37 +87,73 @@ function App() {
   );
 }
 
-function SettingsItem(item) {
-  var checkboxId = item.item.id + "settingcheckbox";
+function SettingsItem(props:any) {
+  var checkboxId = props.item.id + "settingcheckbox";
 
   return (
-    <li id={"setting" + item.item.id} className="settingsItem form-check">
+    <li id={"setting" + props.item.id} className="settingsItem form-check">
       <input
         type="checkbox"
         id={"setting" + checkboxId}
         onChange={handleCheckboxChangeSettings}
-        defaultChecked={!(getCookieValue("setting" + item.item.id) == "false")}
+        defaultChecked={!(getCookieValue("setting" + props.item.id) == "false")}
       ></input>
       <label htmlFor={"setting" + checkboxId}>
         <div className="text">
-          <div className="name">{item.item.name}</div>
-          <div className="info">{item.item.info}</div>
+          <div className="name">{props.item.name}</div>
+          <div className="info">{props.item.info}</div>
         </div>
-        <div className="interval">{item.item.interval}</div>
+        <div className="interval">{props.item.interval}</div>
       </label>
     </li>
   );
 }
 
-function handleCheckboxChangeSettings(event) {
-  var date = new Date();
-  date.setFullYear(date.getFullYear() + 100);
-  date = date.toUTCString();
-
-  setCookie(event.target.parentNode.id, event.target.checked, date);
+function Item(props:any){
+  return (
+    <li className="item" id={props.item.id}>
+    <input
+      type="checkbox"
+      id={props.item.id + "checkbox"}
+      onChange={handleCheckboxChange}
+      defaultChecked={getCookieValue(props.item.id) === "true"}
+    ></input>
+    <label htmlFor={props.item.id + "checkbox"}>
+      <img src={props.item.icon}></img>
+      <div className="text">
+        <div className="name">{props.item.name}</div>
+        <div className="info">{props.item.info}</div>
+      </div>
+      <a className="link" href={props.item.link}>
+        {props.item.link.length > 0 && (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            className="bi bi-info-circle"
+            viewBox="0 0 16 16"
+          >
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+          </svg>
+        )}
+      </a>
+      <div className="interval">{props.item.interval}</div>
+    </label>
+  </li>
+    );
 }
 
-function Timer(props) {
+function handleCheckboxChangeSettings(event:any) {
+  var date = new Date();
+  date.setFullYear(date.getFullYear() + 100);
+  var dateString:string = date.toUTCString();
+
+  setCookie(event.target.parentNode.id, event.target.checked, dateString);
+}
+
+function Timer(props:any) {
   // Update the count down every 1 second
   var x = setInterval(function () {
     // Get today's date and time
@@ -196,12 +201,12 @@ function Timer(props) {
       notFirst = true;
     }
 
-    document.getElementById(props.props.element).innerHTML = countdownString;
+    document.getElementById(props.props.element)!.innerHTML = countdownString;
 
     // If the count down is finished, write some text
     if (distance < 0) {
       clearInterval(x);
-      document.getElementById(props.props.element).innerHTML = "refresh site";
+      document.getElementById(props.props.element)!.innerHTML = "refresh site";
     }
   }, 1000);
 
@@ -209,7 +214,7 @@ function Timer(props) {
 }
 
 function toggleSettings() {
-  var settings = document.getElementById("settings");
+  var settings = document.getElementById("settings")!;
   if (settings.classList.contains("hide")) {
     settings.classList.remove("hide");
   } else {
@@ -217,17 +222,17 @@ function toggleSettings() {
   }
 }
 
-function zeroPad(num, places) {
+function zeroPad(num:number, places:number) {
   var zero = places - num.toString().length + 1;
   return Array(+(zero > 0 && zero)).join("0") + num;
 }
 
-function handleCheckboxChange(event) {
+function handleCheckboxChange(event:any) {
   var interval = items.filter(function (item) {
     return item.id === event.target.parentNode.id;
   })[0].interval;
 
-  var time = null;
+  var time = "";
 
   if (interval === "daily") {
     time = getUTCTimeForStartOfNextDay().toUTCString();
@@ -238,11 +243,11 @@ function handleCheckboxChange(event) {
   setCookie(event.target.parentNode.id, event.target.checked, time);
 }
 
-function setCookie(name, value, expires) {
+function setCookie(name:string, value:boolean, expires:string) {
   document.cookie = `${name}=${value}; expires=${expires}; path=/`;
 }
 
-function getCookieValue(cookieName) {
+function getCookieValue(cookieName:string) {
   const cookies = document.cookie.split("; "); // Split cookies string into an array
 
   for (const cookie of cookies) {
