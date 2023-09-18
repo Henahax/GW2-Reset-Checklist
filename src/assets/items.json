@@ -288,5 +288,85 @@
         "info": "Amnytas Meta event",
         "link": "https://wiki.guildwars2.com/wiki/Amnytas:_Hero%27s_Choice_Chest",
         "default": true
+      },
+      {
+        "id": "TripleTrouble",
+        "name": "Triple Trouble",
+        "category": "worldbosses",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/3/36/The_Wurm%27s_Golden_Chest.png",
+        "info": "Bloodtide Coast Meta event",
+        "link": "https://wiki.guildwars2.com/wiki/Triple_Trouble",
+        "default": false
+      },
+      {
+        "id": "Teuquatl",
+        "name": "Teuquatl",
+        "category": "worldbosses",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/3/36/The_Wurm%27s_Golden_Chest.png",
+        "info": "Sparkfly Fen Meta event",
+        "link": "https://wiki.guildwars2.com/wiki/Defeat_Tequatl_the_Sunless",
+        "default": false
+      },
+      {
+        "id": "KarkaQueen",
+        "name": "Karka Queen",
+        "category": "worldbosses",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/d/da/Karka_Shell.png",
+        "info": "Southsun Cove Meta event",
+        "link": "https://wiki.guildwars2.com/wiki/Defeat_the_Karka_Queen_threatening_the_settlements",
+        "default": false
+      },
+      {
+        "id": "LeyLineAnomaly",
+        "name": "Ley-Line Anomaly",
+        "category": "worldbosses",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/6/67/Ley-Line_Anomaly_portrait.png",
+        "info": "Legendary Ley-Line Anomaly",
+        "link": "https://wiki.guildwars2.com/wiki/Legendary_Ley-Line_Anomaly",
+        "default": false
+      },
+      {
+        "id": "TowerOfNightmares",
+        "name": "Tower of Nightmares",
+        "category": "publicsquads",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/6/68/Tricolor_Key.png",
+        "info": "Eye of the North",
+        "link": "https://wiki.guildwars2.com/wiki/The_Tower_of_Nightmares",
+        "default": false
+      },
+      {
+        "id": "TwistedMarionette",
+        "name": "TwistedMarionette",
+        "category": "publicsquads",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/d/d1/Hoard_of_the_Marionette_Warden.png",
+        "info": "Eye of the North",
+        "link": "https://wiki.guildwars2.com/wiki/The_Twisted_Marionette",
+        "default": false
+      },
+      {
+        "id": "BattleForLionsArch",
+        "name": "Battle For Lion's Arch",
+        "category": "publicsquads",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/e/e0/Chest_of_Exotic_Equipment.png",
+        "info": "Eye of the North",
+        "link": "https://wiki.guildwars2.com/wiki/The_Battle_For_Lion's_Arch",
+        "default": false
+      },
+      {
+        "id": "Dragonstorm",
+        "name": "Dragonstorm",
+        "category": "publicsquads",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/d/da/Gift_of_Aurene_%28container%29.png",
+        "info": "Eye of the North",
+        "link": "https://wiki.guildwars2.com/wiki/Dragonstorm",
+        "default": true
       }
 ]

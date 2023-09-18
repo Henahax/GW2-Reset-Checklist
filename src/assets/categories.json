@@ -25,6 +25,16 @@
         "name": "Meta Events"
       },
       {
+        "id" : "worldbosses",
+        "index": 4,
+        "name": "World Bosses"
+      },
+      {
+        "id" : "publicsquads",
+        "index": 5,
+        "name": "Public Squads"
+      },
+      {
         "id" : "misc",
         "index": 99,
         "name": "Miscellaneous"

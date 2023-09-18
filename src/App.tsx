@@ -46,6 +46,9 @@ function App() {
           </div>
         </div>
         <div id="settings" className="hide">
+          <div id="closeSettings">
+            <button onClick={toggleSettings}>x</button>
+          </div>
           <div className="settingsHeader">Displayes Items</div>
 
           <div id="settingCategories">

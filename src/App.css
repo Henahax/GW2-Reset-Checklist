@@ -57,12 +57,31 @@ h1 {
 
 #settings {
   position: absolute;
-  top: 6rem;
-  left: 0;
+  top: 1rem;
+  left: 1rem;
   z-index: 100;
-  width: 100%;
+  width: calc(100% - 2rem);
   background-color: #161719;
   border-radius: 1rem;
+}
+
+#closeSettings {
+  display: inline-flex;
+  margin: 1rem;
+  width: -webkit-fill-available;
+  border: none;
+  background-color: #161719;
+}
+
+#closeSettings button {
+  margin: auto 0 auto auto;
+  background-color: #343a40;
+  color: #dee2e6;
+  height: 2rem;
+  width: 2rem;
+  font-size: large;
+  border: none;
+  border-radius: 0.25rem;
 }
 
 .hide {
@@ -80,10 +99,12 @@ h1 {
   background-color: #343a40;
   border-radius: 0.25rem;
 }
-.settingsButton:hover {
+
+button:hover {
   filter: brightness(1.25);
 }
-.settingsButton:active {
+
+button:active {
   filter: brightness(0.75);
 }
 
