@@ -6,7 +6,8 @@
         "interval": "daily",
         "icon": "https://wiki.guildwars2.com/images/9/96/Ley-Energy_Matter_Converter.png",
         "info": "Currency and Crafting Marterial Converters",
-        "link": "https://wiki.guildwars2.com/wiki/Converter"
+        "link": "https://wiki.guildwars2.com/wiki/Converter",
+        "default": true
       },
       {
         "id": "AntiqueSummoningStones",
@@ -15,7 +16,8 @@
         "interval": "weekly",
         "icon": "https://wiki.guildwars2.com/images/f/f6/Antique_Summoning_Stone.png",
         "info": "Arborstone",
-        "link": "https://wiki.guildwars2.com/wiki/Leivas#Weekly_Sales"
+        "link": "https://wiki.guildwars2.com/wiki/Leivas#Weekly_Sales",
+        "default": true
       },
       {
         "id": "ChunkOfAncientAmbergris",
@@ -24,7 +26,8 @@
         "interval": "daily",
         "icon": "https://wiki.guildwars2.com/images/2/25/Chunk_of_Ancient_Ambergris.png",
         "info": "Arborstone",
-        "link": "https://wiki.guildwars2.com/wiki/Taro_Everclaw"
+        "link": "https://wiki.guildwars2.com/wiki/Taro_Everclaw",
+        "default": false
       },
       {
         "id": "HomeInstance",
@@ -33,7 +36,8 @@
         "interval": "daily",
         "icon": "https://wiki.guildwars2.com/images/5/56/Home_Portal_Stone.png",
         "info": "Charged Quartz Crystal, Harvesting Nodes, Chests",
-        "link": "https://wiki.guildwars2.com/wiki/Home_instance#List_of_home_instance_upgrades"
+        "link": "https://wiki.guildwars2.com/wiki/Home_instance#List_of_home_instance_upgrades",
+        "default": true
       },
       {
         "id": "GuildHall",
@@ -42,7 +46,8 @@
         "interval": "daily",
         "icon": "https://wiki.guildwars2.com/images/8/89/Guild_Hall_Obtained.png",
         "info": "Harvesting Nodes, Merchants, Bartender Boosts",
-        "link": "https://wiki.guildwars2.com/wiki/Guild_hall#Features"
+        "link": "https://wiki.guildwars2.com/wiki/Guild_hall#Features",
+        "default": true
       },
       {
         "id": "DiscountedFractalEncryptionKeys",
@@ -51,7 +56,8 @@
         "interval": "daily",
         "icon": "https://wiki.guildwars2.com/images/f/f0/Fractal_Encryption_Key.png",
         "info": "Mistlock Observatory / Mistlock Sanctuary",
-        "link": "https://wiki.guildwars2.com/wiki/Deeply_Discounted_Fractal_Encryption_Key"
+        "link": "https://wiki.guildwars2.com/wiki/Deeply_Discounted_Fractal_Encryption_Key",
+        "default": true
       },
       {
         "id": "DrizzlewoodMaterialDonations",
@@ -60,7 +66,8 @@
         "interval": "daily",
         "icon": "https://wiki.guildwars2.com/images/6/6d/Quaestor_%28overhead_icon%29.png",
         "info": "Drizzlewood Coast",
-        "link": "https://fast.farming-community.eu/open-world/drizzlewood-material-donation"
+        "link": "https://fast.farming-community.eu/open-world/drizzlewood-material-donation",
+        "default": true
       },
       {
         "id": "ProvisionerTokens",
@@ -69,7 +76,8 @@
         "interval": "daily",
         "icon": "https://wiki.guildwars2.com/images/9/9d/Provisioner_Token.png",
         "info": "Central Tyria & HoT & SotO",
-        "link": "https://wiki.guildwars2.com/wiki/Faction_Provisioner#Faction_Provisioners"
+        "link": "https://wiki.guildwars2.com/wiki/Faction_Provisioner#Faction_Provisioners",
+        "default": true
       },
       {
         "id": "PactScoutsMappingMaterials",
@@ -78,7 +86,8 @@
         "interval": "daily",
         "icon": "https://wiki.guildwars2.com/images/3/3c/Pact_Scout%27s_Mapping_Materials.png",
         "info": "Pact Supply Network Agents",
-        "link": "https://wiki.guildwars2.com/wiki/Pact_Supply_Network_Agent#Locations"
+        "link": "https://wiki.guildwars2.com/wiki/Pact_Supply_Network_Agent#Locations",
+        "default": true
       },
       {
         "id": "AscendedCrafting",
@@ -87,7 +96,8 @@
         "interval": "daily",
         "icon": "https://wiki.guildwars2.com/images/c/cf/Crafting_icon.png",
         "info": "Mithrillium, Spirit Residue, Elonian Cord, Weaving Thread",
-        "link": "https://wiki.guildwars2.com/wiki/Server_reset#Crafted_items"
+        "link": "https://wiki.guildwars2.com/wiki/Server_reset#Crafted_items",
+        "default": true
       },
       {
         "id": "AltParking",
@@ -96,7 +106,8 @@
         "interval": "daily",
         "icon": "https://wiki.guildwars2.com/images/7/70/Character_Slot_Expansion.png",
         "info": "Open Chest with Alt-Charactes",
-        "link": "https://fast.farming-community.eu/open-world/alt-parking"
+        "link": "https://fast.farming-community.eu/open-world/alt-parking",
+        "default": true
       },
       {
         "id": "MistHardenedLockboxKey",
@@ -105,7 +116,8 @@
         "interval": "weekly",
         "icon": "https://wiki.guildwars2.com/images/a/ad/Mist-Hardened_Lockbox_Key.png",
         "info": "Dugan on WvW-Maps",
-        "link": "https://wiki.guildwars2.com/wiki/Mist-Hardened_Lockbox_Key"
+        "link": "https://wiki.guildwars2.com/wiki/Mist-Hardened_Lockbox_Key",
+        "default": true
       },
       {
         "id": "BlackLionChestKey",
@@ -114,7 +126,8 @@
         "interval": "weekly",
         "icon": "https://wiki.guildwars2.com/images/1/15/Black_Lion_Chest_Key.png",
         "info": "Level 10 Human Story",
-        "link": "https://www.youtube.com/watch?v=1KdasTB2rNM"
+        "link": "https://www.youtube.com/watch?v=1KdasTB2rNM",
+        "default": false
       },
       {
         "id": "VigilEmissaryChest",
@@ -123,6 +136,157 @@
         "interval": "weekly",
         "icon": "https://wiki.guildwars2.com/images/e/eb/Community_Goal_Reward-_Tier_5.png",
         "info": "Eye of the North after IBS Strike Missions",
-        "link": "https://wiki.guildwars2.com/wiki/Vigil_Emissary_Chest"
+        "link": "https://wiki.guildwars2.com/wiki/Vigil_Emissary_Chest",
+        "default": false
+      },
+      {
+        "id": "VerdantBrink",
+        "name": "Verdant Brink: Hero's Choice Chest",
+        "category": "meta",
+        "interval": "daily",
+        "icon": "https://render.guildwars2.com/file/08DC26975002D02B68BEF2A46EF2A89E7243FD63/1424065.png",
+        "info": "Verdant Brink Meta event",
+        "link": "https://wiki.guildwars2.com/wiki/Verdant_Brink:_Hero%27s_Choice_Chest",
+        "default": false
+      },
+      {
+        "id": "AuricBasin",
+        "name": "Auric Basin: Hero's Choice Chest",
+        "category": "meta",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/2/24/Auric_Basin-_Hero%27s_Choice_Chest.png",
+        "info": "Auric Basin Meta event",
+        "link": "https://wiki.guildwars2.com/wiki/Auric_Basin:_Hero%27s_Choice_Chest",
+        "default": false
+      },
+      {
+        "id": "TangledDepths",
+        "name": "Tangled Depths: Hero's Choice Chest",
+        "category": "meta",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/2/27/Tangled_Depths-_Hero%27s_Choice_Chest.png",
+        "info": "Tangled Depths Meta event",
+        "link": "https://wiki.guildwars2.com/wiki/Tangled_Depths:_Hero%27s_Choice_Chest",
+        "default": false
+      },
+      {
+        "id": "DragonsStand",
+        "name": "Dragon's Stand: Hero's Choice Chest",
+        "category": "meta",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/e/e7/Dragon%27s_Stand-_Hero%27s_Choice_Chest.png",
+        "info": "Dragon's Stand Meta event",
+        "link": "https://wiki.guildwars2.com/wiki/Dragon%27s_Stand:_Hero%27s_Choice_Chest",
+        "default": false
+      },
+      {
+        "id": "CrystalOasis",
+        "name": "Crystal Oasis: Hero's Choice Chest",
+        "category": "meta",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/e/eb/The_Spearmarshal%27s_Gift.png",
+        "info": "Crystal Oasis Meta event",
+        "link": "https://wiki.guildwars2.com/wiki/Crystal_Oasis:_Hero%27s_Choice_Chest",
+        "default": false
+      },
+      {
+        "id": "ElonRiverlands",
+        "name": "Elon Riverlands: Hero's Choice Chest",
+        "category": "meta",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/8/89/Glint%27s_Crystalline_Chest.png",
+        "info": "Elon Riverlands Meta event",
+        "link": "https://wiki.guildwars2.com/wiki/Elon_Riverlands:_Hero%27s_Choice_Chest",
+        "default": false
+      },
+      {
+        "id": "TheDesolation",
+        "name": "The Desolation: Hero's Choice Chest",
+        "category": "meta",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/a/a1/Chest_of_the_Warbeast_Conqueror.png",
+        "info": "The Desolation Meta event",
+        "link": "https://wiki.guildwars2.com/wiki/The_Desolation:_Hero%27s_Choice_Chest",
+        "default": false
+      },
+      {
+        "id": "DomainOfVabbi",
+        "name": "Domain of Vabbi: Hero's Choice Chest",
+        "category": "meta",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/d/dd/Kito%27s_Secret_Cache.png",
+        "info": "Domain of Vabbi Meta event",
+        "link": "https://wiki.guildwars2.com/wiki/Domain_of_Vabbi:_Hero%27s_Choice_Chest",
+        "default": false
+      },
+      {
+        "id": "SeitungProvince",
+        "name": "Seitung Province: Hero's Choice Chest",
+        "category": "meta",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/0/0a/Deluxe_Gear_Box_%28End_of_Dragons%29.png",
+        "info": "Seitung Province Meta event",
+        "link": "https://wiki.guildwars2.com/wiki/Seitung_Province:_Hero%27s_Choice_Chest",
+        "default": false
+      },
+      {
+        "id": "NewKainengCity",
+        "name": "New Kaineng City: Hero's Choice Chest",
+        "category": "meta",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/0/0a/Deluxe_Gear_Box_%28End_of_Dragons%29.png",
+        "info": "New Kaineng City Meta event",
+        "link": "https://wiki.guildwars2.com/wiki/New_Kaineng_City:_Hero%27s_Choice_Chest",
+        "default": false
+      },
+      {
+        "id": "EchovaldWilds",
+        "name": "Echovald Wilds: Hero's Choice Chest",
+        "category": "meta",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/0/0a/Deluxe_Gear_Box_%28End_of_Dragons%29.png",
+        "info": "Echovald Wilds Meta event",
+        "link": "https://wiki.guildwars2.com/wiki/Echovald_Wilds:_Hero%27s_Choice_Chest",
+        "default": false
+      },
+      {
+        "id": "DragonsEnd",
+        "name": "Dragon's End: Hero's Choice Chest",
+        "category": "meta",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/0/0a/Deluxe_Gear_Box_%28End_of_Dragons%29.png",
+        "info": "Dragon's End Meta event",
+        "link": "https://wiki.guildwars2.com/wiki/Dragon%27s_End:_Hero%27s_Choice_Chest",
+        "default": false
+      },
+      {
+        "id": "GyalaDelve",
+        "name": "Gyala Delve: Hero's Choice Chest",
+        "category": "meta",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/0/0a/Deluxe_Gear_Box_%28End_of_Dragons%29.png",
+        "info": "Gyala Delve Meta event",
+        "link": "https://wiki.guildwars2.com/wiki/Gyala_Delve:_Hero%27s_Choice_Chest",
+        "default": false
+      },
+      {
+        "id": "SkywatchArchipelago",
+        "name": "Skywatch Archipelago: Hero's Choice Chest",
+        "category": "meta",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/e/e4/Wizard%27s_Hoard.png",
+        "info": "Skywatch Archipelago Meta event",
+        "link": "https://wiki.guildwars2.com/wiki/Skywatch_Archipelago:_Hero%27s_Choice_Chest",
+        "default": true
+      },
+      {
+        "id": "Amnytas",
+        "name": "Amnytas: Hero's Choice Chest",
+        "category": "meta",
+        "interval": "daily",
+        "icon": "https://wiki.guildwars2.com/images/7/79/Amnytas_Chest.png",
+        "info": "Amnytas Meta event",
+        "link": "https://wiki.guildwars2.com/wiki/Amnytas:_Hero%27s_Choice_Chest",
+        "default": true
       }
 ]
