@@ -147,7 +147,14 @@ function EventTimer(props: any) {
   }
 }
 
-const renderer = ({ hours, minutes, seconds, completed }) => {
+interface RendererProps {
+  hours: number;
+  minutes: number;
+  seconds: number;
+  completed: boolean;
+}
+
+const renderer : React.FC<RendererProps>= ({ hours, minutes, seconds, completed }) => {
   if (completed) {
     return (
       <div>
