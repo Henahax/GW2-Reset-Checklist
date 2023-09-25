@@ -2,7 +2,7 @@ import "./App.css";
 import categories from "./assets/categories.json";
 import items from "./assets/items.json";
 import Countdown, { zeroPad } from "react-countdown";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   let dateDaily = getUTCTimeForStartOfNextDay();
@@ -85,7 +85,7 @@ function App() {
                 })
                 .sort((a, b) => a.name.localeCompare(b.name))
                 .sort((a, b) => a.interval.localeCompare(b.interval))
-                .sort((a, b) => a.sort - b.sort)
+                .sort((a:any, b:any) => a.sort - b.sort)
                 .map((item) => (
                   <Item item={item} />
                 ))}
@@ -104,7 +104,7 @@ function App() {
 }
 
 function EventTimer(props: any) {
-  const [time, setTime] = useState(new Date());
+  const [setTime] : any = useState(new Date());
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -117,7 +117,7 @@ function EventTimer(props: any) {
   if (props.item.timer === undefined) {
     return <></>;
   }
-  var test = getNextEventTime(props.item.timer);
+  var test:any = getNextEventTime(props.item.timer);
 
   if (getEventActive(props.item.timer)) {
     return (
