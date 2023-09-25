@@ -105,7 +105,7 @@ function App() {
 }
 
 function EventTimer(props: any) {
-  const [time, setTime] = useState<Date>(new Date());
+  const [_time, setTime] = useState(new Date());
 
   useEffect(() => {
     const interval = setInterval(() => {
