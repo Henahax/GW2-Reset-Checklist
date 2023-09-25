@@ -61,7 +61,7 @@ function App() {
                       return item.category == category.id;
                     })
                     .sort((a, b) => a.interval.localeCompare(b.interval))
-                    .sort((a:any, b:any) => a.sort - b.sort)
+                    .sort((a: any, b: any) => a.sort - b.sort)
                     .map((item) => (
                       <SettingsItem item={item} />
                     ))}
@@ -86,7 +86,7 @@ function App() {
                 })
                 .sort((a, b) => a.name.localeCompare(b.name))
                 .sort((a, b) => a.interval.localeCompare(b.interval))
-                .sort((a:any, b:any) => a.sort - b.sort)
+                .sort((a: any, b: any) => a.sort - b.sort)
                 .map((item) => (
                   <Item item={item} />
                 ))}
@@ -105,7 +105,7 @@ function App() {
 }
 
 function EventTimer(props: any) {
-  const [setTime] : any = useState(new Date());
+  const [time, setTime] = useState<Date>(new Date());
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -118,7 +118,7 @@ function EventTimer(props: any) {
   if (props.item.timer === undefined) {
     return <></>;
   }
-  var test:any = getNextEventTime(props.item.timer);
+  var test: any = getNextEventTime(props.item.timer);
 
   if (getEventActive(props.item.timer)) {
     return (
@@ -155,7 +155,12 @@ interface RendererProps {
   completed: boolean;
 }
 
-const renderer : React.FC<RendererProps>= ({ hours, minutes, seconds, completed }) => {
+const renderer: React.FC<RendererProps> = ({
+  hours,
+  minutes,
+  seconds,
+  completed,
+}) => {
   if (completed) {
     return (
       <div>

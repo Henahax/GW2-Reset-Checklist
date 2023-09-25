@@ -230,7 +230,7 @@
     "info": "Dragon's Stand Meta event",
     "link": "https://wiki.guildwars2.com/wiki/Dragon%27s_Stand:_Hero%27s_Choice_Chest",
     "timer": {
-      "duration": [2,0],
+      "duration": [2, 0],
       "times": [
         [1, 30],
         [3, 30],
@@ -258,7 +258,7 @@
     "info": "Crystal Oasis Meta event",
     "link": "https://wiki.guildwars2.com/wiki/Crystal_Oasis:_Hero%27s_Choice_Chest",
     "timer": {
-      "duration": [0,25],
+      "duration": [0, 25],
       "times": [
         [0, 5],
         [2, 5],
@@ -286,7 +286,7 @@
     "info": "Desert Highlands Meta event",
     "link": "https://wiki.guildwars2.com/wiki/The_Search_for_Buried_Treasure",
     "timer": {
-      "duration": [0,20],
+      "duration": [0, 20],
       "times": [
         [1, 0],
         [3, 0],
@@ -314,7 +314,7 @@
     "info": "Elon Riverlands Meta event",
     "link": "https://wiki.guildwars2.com/wiki/Elon_Riverlands:_Hero%27s_Choice_Chest",
     "timer": {
-      "duration": [0,20],
+      "duration": [0, 20],
       "times": [
         [1, 30, "Augury Rock"],
         [1, 55, "Doppelganger"],
@@ -355,7 +355,7 @@
     "info": "The Desolation Meta event",
     "link": "https://wiki.guildwars2.com/wiki/The_Desolation:_Hero%27s_Choice_Chest",
     "timer": {
-      "duration": [0,20],
+      "duration": [0, 20],
       "times": [
         [1, 0, "Maws of Torment"],
         [1, 30, "Junundu Rising"],
@@ -396,7 +396,7 @@
     "info": "Domain of Vabbi Meta event",
     "link": "https://wiki.guildwars2.com/wiki/Domain_of_Vabbi:_Hero%27s_Choice_Chest",
     "timer": {
-      "duration": [0,30],
+      "duration": [0, 30],
       "times": [
         [0, 0, "Forged with Fire"],
         [0, 3, "Serpent's Ire"],
