@@ -1,13 +1,13 @@
 import "./App.css";
 import categories from "./assets/categories.json";
 import items from "./assets/items.json";
+import Countdown, { zeroPad } from "react-countdown";
+import React, { useState, useEffect } from "react";
 
 function App() {
   let dateDaily = getUTCTimeForStartOfNextDay();
-  let propsDaily = { element: "timerDaily", countDownDate: dateDaily };
-
   let dateWeekly = getUTCTimeForStartOfNextWeek();
-  let propsWeekly = { element: "timerWeekly", countDownDate: dateWeekly };
+
   return (
     <>
       <header>
@@ -15,12 +15,12 @@ function App() {
           <h1 id="title">Checklist</h1>
           <div id="timers">
             <div className="timerContainer">
-              Daily:
-              <Timer props={propsDaily} />
+              <div>Daily:</div>
+              <Countdown date={dateDaily} zeroPadTime={2} daysInHours={true} />
             </div>
             <div className="timerContainer">
-              Weekly:
-              <Timer props={propsWeekly} />
+              <div>Weekly:</div>
+              <Countdown date={dateWeekly} zeroPadTime={2} />
             </div>
             <button className="settingsButton" onClick={toggleSettings}>
               <svg
@@ -83,7 +83,9 @@ function App() {
                 .filter(function (item) {
                   return getItemShown(item);
                 })
+                .sort((a, b) => a.name.localeCompare(b.name))
                 .sort((a, b) => a.interval.localeCompare(b.interval))
+                .sort((a, b) => a.sort - b.sort)
                 .map((item) => (
                   <Item item={item} />
                 ))}
@@ -100,6 +102,66 @@ function App() {
     </>
   );
 }
+
+function EventTimer(props: any) {
+  const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  if (props.item.timer === undefined) {
+    return <></>;
+  }
+  var test = getNextEventTime(props.item.timer);
+
+  if (getEventActive(props.item.timer)) {
+    return (
+      <div className="eventTimer eventActive">
+        <div>Active!</div>
+        <div>{test[2]}</div>
+        <Countdown
+          date={test[0]}
+          daysInHours={true}
+          zeroPadTime={2}
+          renderer={renderer}
+          overtime={true}
+        />
+        <div>/</div>
+        <div>
+          {zeroPad(test[1][0])}:{zeroPad(test[1][1])}:{"00"}
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <div className="eventTimer">
+        <div>{test[2]}</div>
+        <Countdown date={test[0]} daysInHours={true} zeroPadTime={2} />
+      </div>
+    );
+  }
+}
+
+const renderer = ({ hours, minutes, seconds, completed }) => {
+  if (completed) {
+    return (
+      <div>
+        {zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        {zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
+      </div>
+    );
+  }
+};
 
 function getItemShown(item: any): boolean {
   var cookieValue = getCookieValue("setting" + item.id);
@@ -149,29 +211,94 @@ function Item(props: any) {
       ></input>
       <label htmlFor={props.item.id + "checkbox"}>
         <img src={props.item.icon}></img>
-        <div className="text">
-          <div className="name">{props.item.name}</div>
-          <div className="info">{props.item.info}</div>
-        </div>
-        <a className="link" href={props.item.link}>
-          {props.item.link.length > 0 && (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              className="bi bi-info-circle"
-              viewBox="0 0 16 16"
-            >
-              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-              <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-            </svg>
+        <div className="lineContainer">
+          <div className="itemLine1">
+            <div className="text">
+              <div className="name">{props.item.name}</div>
+              <div className="info">{props.item.info}</div>
+            </div>
+            <a className="link" href={props.item.link}>
+              {props.item.link.length > 0 && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  className="bi bi-info-circle"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                </svg>
+              )}
+            </a>
+            <div className="interval">{props.item.interval}</div>
+          </div>
+          {!(props.item.timer === undefined) && (
+            <EventTimer item={props.item} className="eventTimer" />
           )}
-        </a>
-        <div className="interval">{props.item.interval}</div>
+        </div>
       </label>
     </li>
   );
+}
+
+function getNextEventTime(timer: any) {
+  var now = new Date();
+  var startOfNextDay = getUTCTimeForStartOfNextDay();
+  var startOfThisDay = startOfNextDay.getTime() - 24 * 60 * 60 * 1000;
+
+  var nextEventTime = now.getTime();
+  var add: string = "";
+  var duration = [0, 0];
+
+  for (let i = 0; i < timer.times.length; i++) {
+    if (
+      startOfThisDay +
+        timer.times[i][0] * 60 * 60 * 1000 +
+        timer.times[i][1] * 60 * 1000 +
+        timer.duration[0] * 60 * 60 * 1000 +
+        timer.duration[1] * 60 * 1000 >
+      now.getTime()
+    ) {
+      nextEventTime =
+        startOfThisDay +
+        timer.times[i][0] * 60 * 60 * 1000 +
+        timer.times[i][1] * 60 * 1000;
+      if (timer.times[i][2]) {
+        add = timer.times[i][2];
+      }
+      duration = timer.duration;
+      break;
+    }
+  }
+  return [new Date(nextEventTime), duration, add];
+}
+
+function getEventActive(timer: any) {
+  var now = new Date();
+  var startOfNextDay = getUTCTimeForStartOfNextDay();
+  var startOfThisDay = startOfNextDay.getTime() - 24 * 60 * 60 * 1000;
+
+  var isActive = false;
+  for (let i = 0; i < timer.times.length; i++) {
+    if (
+      startOfThisDay +
+        timer.times[i][0] * 60 * 60 * 1000 +
+        timer.times[i][1] * 60 * 1000 <
+        now.getTime() &&
+      startOfThisDay +
+        timer.times[i][0] * 60 * 60 * 1000 +
+        timer.times[i][1] * 60 * 1000 +
+        timer.duration[0] * 60 * 60 * 1000 +
+        timer.duration[1] * 60 * 1000 >
+        now.getTime()
+    ) {
+      isActive = true;
+      break;
+    }
+  }
+  return isActive;
 }
 
 function handleCheckboxChangeSettings(event: any) {
@@ -181,7 +308,7 @@ function handleCheckboxChangeSettings(event: any) {
 
   setCookie(event.target.parentNode.id, event.target.checked, dateString);
 }
-
+/*
 function Timer(props: any) {
   // Update the count down every 1 second
   var x = setInterval(function () {
@@ -189,7 +316,7 @@ function Timer(props: any) {
     var now = new Date().getTime();
 
     // Find the distance between now and the count down date
-    var distance = props.props.countDownDate - now;
+    var distance = Math.abs(props.props.countDownDate - now);
 
     // Time calculations for days, hours, minutes and seconds
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -199,7 +326,7 @@ function Timer(props: any) {
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    var countdownString = "";
+    var countdownString: string = "";
     var notFirst = false;
     if (days > 0) {
       countdownString += days + ":";
@@ -241,6 +368,7 @@ function Timer(props: any) {
 
   return <div id={props.props.element} className="timer"></div>;
 }
+*/
 
 function toggleSettings() {
   var settings = document.getElementById("settings")!;
@@ -250,12 +378,12 @@ function toggleSettings() {
     location.reload();
   }
 }
-
+/*
 function zeroPad(num: number, places: number) {
   var zero = places - num.toString().length + 1;
   return Array(+(zero > 0 && zero)).join("0") + num;
 }
-
+*/
 function handleCheckboxChange(event: any) {
   var interval = items.filter(function (item) {
     return item.id === event.target.parentNode.id;
@@ -300,7 +428,7 @@ function getUTCTimeForStartOfNextWeek() {
   const now = new Date();
   const nextWeek = new Date(now);
 
-  nextWeek.setDate(nextWeek.getDate() + ((7 - nextWeek.getDay()) % 7 || 7));
+  nextWeek.setDate(nextWeek.getDate() + ((7 - nextWeek.getDay()) % 7));
   nextWeek.setUTCDate(nextWeek.getUTCDate() + 1);
   nextWeek.setUTCHours(7, 30, 0, 0);
 
