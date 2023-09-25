@@ -61,6 +61,7 @@ function App() {
                       return item.category == category.id;
                     })
                     .sort((a, b) => a.interval.localeCompare(b.interval))
+                    .sort((a:any, b:any) => a.sort - b.sort)
                     .map((item) => (
                       <SettingsItem item={item} />
                     ))}
