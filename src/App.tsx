@@ -16,11 +16,11 @@ function App() {
           <div id="timers">
             <div className="timerContainer">
               <div>Daily:</div>
-              <Countdown date={dateDaily} zeroPadTime={2} daysInHours={true} />
+              <Countdown date={dateDaily} zeroPadTime={2} daysInHours={true} onComplete={refreshPage}/>
             </div>
             <div className="timerContainer">
               <div>Weekly:</div>
-              <Countdown date={dateWeekly} zeroPadTime={2} />
+              <Countdown date={dateWeekly} zeroPadTime={2} onComplete={refreshPage}/>
             </div>
             <button className="settingsButton" onClick={toggleSettings}>
               <svg
@@ -102,6 +102,10 @@ function App() {
       </div>
     </>
   );
+}
+
+function refreshPage(){
+  window.location.reload();
 }
 
 function EventTimer(props: any) {
