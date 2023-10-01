@@ -138,7 +138,7 @@
   },
   {
     "id": "VerdantBrink",
-    "name": "Verdant Brink: Hero's Choice Chest",
+    "name": "Verdant Brink",
     "category": "meta",
     "interval": "daily",
     "sort": 20,
@@ -166,7 +166,7 @@
   },
   {
     "id": "AuricBasin",
-    "name": "Auric Basin: Hero's Choice Chest",
+    "name": "Auric Basin",
     "category": "meta",
     "interval": "daily",
     "sort": 21,
@@ -194,7 +194,7 @@
   },
   {
     "id": "TangledDepths",
-    "name": "Tangled Depths: Hero's Choice Chest",
+    "name": "Tangled Depths",
     "category": "meta",
     "interval": "daily",
     "sort": 23,
@@ -222,7 +222,7 @@
   },
   {
     "id": "DragonsStand",
-    "name": "Dragon's Stand: Hero's Choice Chest",
+    "name": "Dragon's Stand",
     "category": "meta",
     "interval": "daily",
     "sort": 24,
@@ -250,7 +250,7 @@
   },
   {
     "id": "CrystalOasis",
-    "name": "Crystal Oasis: Hero's Choice Chest",
+    "name": "Crystal Oasis",
     "category": "meta",
     "interval": "daily",
     "sort": 30,
@@ -278,7 +278,7 @@
   },
   {
     "id": "DesertHighlands",
-    "name": "Desert Highlands: Buried Treasure",
+    "name": "Desert Highlands",
     "category": "meta",
     "interval": "daily",
     "sort": 31,
@@ -306,7 +306,7 @@
   },
   {
     "id": "ElonRiverlands",
-    "name": "Elon Riverlands: Hero's Choice Chest",
+    "name": "Elon Riverlands",
     "category": "meta",
     "interval": "daily",
     "sort": 32,
@@ -347,7 +347,7 @@
   },
   {
     "id": "TheDesolation",
-    "name": "The Desolation: Hero's Choice Chest",
+    "name": "The Desolation",
     "category": "meta",
     "interval": "daily",
     "sort": 33,
@@ -388,7 +388,7 @@
   },
   {
     "id": "DomainOfVabbi",
-    "name": "Domain of Vabbi: Hero's Choice Chest",
+    "name": "Domain of Vabbi",
     "category": "meta",
     "interval": "daily",
     "sort": 34,
@@ -441,7 +441,7 @@
   },
   {
     "id": "SeitungProvince",
-    "name": "Seitung Province: Hero's Choice Chest",
+    "name": "Seitung Province",
     "category": "meta",
     "interval": "daily",
     "sort": 40,
@@ -469,7 +469,7 @@
   },
   {
     "id": "NewKainengCity",
-    "name": "New Kaineng City: Hero's Choice Chest",
+    "name": "New Kaineng City",
     "category": "meta",
     "interval": "daily",
     "sort": 41,
@@ -497,7 +497,7 @@
   },
   {
     "id": "EchovaldWilds",
-    "name": "Echovald Wilds: Hero's Choice Chest",
+    "name": "Echovald Wilds",
     "category": "meta",
     "interval": "daily",
     "sort": 42,
@@ -525,7 +525,7 @@
   },
   {
     "id": "DragonsEnd",
-    "name": "Dragon's End: Hero's Choice Chest",
+    "name": "Dragon's End",
     "category": "meta",
     "interval": "daily",
     "sort": 43,
@@ -553,7 +553,7 @@
   },
   {
     "id": "GyalaDelve",
-    "name": "Gyala Delve: Hero's Choice Chest",
+    "name": "Gyala Delve",
     "category": "meta",
     "interval": "daily",
     "sort": 44,
@@ -563,7 +563,7 @@
   },
   {
     "id": "SkywatchArchipelago",
-    "name": "Skywatch Archipelago: Hero's Choice Chest",
+    "name": "Skywatch Archipelago",
     "category": "meta",
     "interval": "daily",
     "sort": 50,
@@ -592,7 +592,7 @@
   },
   {
     "id": "Amnytas",
-    "name": "Amnytas: Hero's Choice Chest",
+    "name": "Amnytas",
     "category": "meta",
     "interval": "daily",
     "sort": 51,

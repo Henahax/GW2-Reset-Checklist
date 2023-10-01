@@ -335,6 +335,10 @@ li:has(input[type="checkbox"]:checked) .eventTimer {
   display: none;
 }
 
+li:has(input[type="checkbox"]:checked) .rightBottom {
+  display: none;
+}
+
 .info {
   opacity: 0.5;
   font-size: 0.75rem;
