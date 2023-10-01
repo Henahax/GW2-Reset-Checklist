@@ -59,12 +59,12 @@ header #timers {
 }
 .timerActive{
   display: inline-flex;
-  margin: auto 0.5rem;
+  margin: auto 0.25rem auto auto;
 }
 
 .timerText{
   display: inline-flex;
-  margin: auto 0;
+  margin: auto 0.25rem auto auto;
 }
 
 .timerNumbers{
