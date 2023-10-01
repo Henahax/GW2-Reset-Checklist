@@ -2,7 +2,7 @@ header {
   margin: auto 1rem 1rem 1rem;
 }
 
-div:empty{
+div:empty {
   display: none;
 }
 
@@ -29,7 +29,7 @@ div:empty{
 #subTitleRight {
   margin: auto 0 auto auto;
   text-align: right;
-  max-width: 16rem;  
+  max-width: 16rem;
 }
 
 header #timers {
@@ -46,19 +46,31 @@ header #timers {
   width: fit-content;
 }
 
-.eventTimer{
-  font-size: small;
-  display: inline-flex;
+.eventTimer {
+  font-size: 0.75rem;
+  display: flow;
   text-align: right;
   margin: auto 0 auto auto;
   gap: 0.32rem;
 }
 
-.eventActive{
+.eventActive {
   color: greenyellow;
 }
+.timerActive{
+  display: inline-flex;
+  margin: auto 0.5rem;
+}
 
+.timerText{
+  display: inline-flex;
+  margin: auto 0;
+}
 
+.timerNumbers{
+  display: inline-flex;
+  gap: 0.25rem;
+}
 
 h1 {
   font-size: xx-large;
@@ -207,9 +219,9 @@ button:active {
 
 input[type="checkbox"] {
   -webkit-appearance: none;
-  height: 2rem;
-  width: 2rem;
-  margin: auto 0.25rem auto 0.25rem;
+  min-height: 2rem;
+  min-width: 2rem;
+  margin: auto 0 auto 0;
   background-color: transparent;
   border-color: #495057;
   border-style: solid;
@@ -226,39 +238,20 @@ input[type="checkbox"]:checked {
   background-size: contain;
 }
 
-.item input[type="checkbox"]:checked {
-  transform: scale(0.75);
-}
-
-li:has(input[type="checkbox"]:checked) .eventTimer{
-  display: none;
-}
-
 .item label {
-  display: inline-flex;
-  width: 100%;
+  display: contents;
+  gap: 0.25rem;
 }
 
 .item img {
   height: 2rem;
   width: 2rem;
-  margin: auto 0.25rem auto 0.25rem;
+  margin: auto 0.75rem auto 0.75rem;
 }
 
 .item .lineContainer {
-  width: 100%;
   display: flex;
   flex-direction: column;
-}
-
-.item .itemLine1 {
-  display: inline-flex;
-}
-.item .itemLine2 {
-}
-
-.item label .text {
-  margin: auto 0.25rem auto 0.25rem;
 }
 
 .link {
@@ -275,11 +268,42 @@ li:has(input[type="checkbox"]:checked) .eventTimer{
   opacity: 1;
 }
 
+.right {
+  margin: auto 0 auto auto;
+  text-align: right;
+}
+
+.rightTop {
+  align-items: center;
+  display: inline-flex;
+  width: 100%;
+}
+
+.rightBottom {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+}
+
 .interval {
   margin: auto 0 auto 0.5rem;
   opacity: 0.5;
   font-size: 0.75rem;
   display: inline-flex;
+}
+
+.settingsItem .interval{
+  margin: auto 1rem;
+}
+
+.category:not(:has(input[type="checkbox"]:not(:checked))) h2 {
+  font-size: 0.75rem;
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.item input[type="checkbox"]:checked {
+  transform: scale(0.75);
 }
 
 .item:has(input[type="checkbox"]:checked) {
@@ -305,6 +329,10 @@ li:has(input[type="checkbox"]:checked) .eventTimer{
 
 .item:has(input[type="checkbox"]:checked) .interval {
   font-size: 0.5rem;
+}
+
+li:has(input[type="checkbox"]:checked) .eventTimer {
+  display: none;
 }
 
 .info {
