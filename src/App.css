@@ -57,17 +57,17 @@ header #timers {
 .eventActive {
   color: greenyellow;
 }
-.timerActive{
+.timerActive {
   display: inline-flex;
   margin: auto 0.25rem auto auto;
 }
 
-.timerText{
+.timerText {
   display: inline-flex;
   margin: auto 0.25rem auto auto;
 }
 
-.timerNumbers{
+.timerNumbers {
   display: inline-flex;
   gap: 0.25rem;
 }
@@ -130,6 +130,20 @@ h1 {
   background-size: contain;
   background-color: #343a40;
   border-radius: 0.25rem;
+  animation-name: options;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+@keyframes options {
+  0% {
+    background-color: #343a40;
+  }
+  25% {
+    background-color: #697581;
+  }
+  50% {
+    background-color: #343a40;
+  }
 }
 
 button:hover {
@@ -292,7 +306,7 @@ input[type="checkbox"]:checked {
   display: inline-flex;
 }
 
-.settingsItem .interval{
+.settingsItem .interval {
   margin: auto 1rem;
 }
 

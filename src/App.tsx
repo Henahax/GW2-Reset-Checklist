@@ -214,10 +214,10 @@ const renderer: React.FC<RendererProps> = ({
   }
 };
 
-function getItemShown(item: any): boolean {
-  var cookieValue = getCookieValue("setting" + item.id);
+function getItemShown(props: any): boolean {
+  var cookieValue = getCookieValue("setting" + props.id);
   if (cookieValue == null) {
-    return item.default;
+    return props.default;
   }
   return cookieValue == "true";
 }
@@ -430,7 +430,8 @@ function getUTCTimeForStartOfNextWeek() {
   const now = new Date();
   const nextWeek = new Date(now);
 
-  nextWeek.setDate(nextWeek.getDate() + ((1 + 7 - nextWeek.getDay()) % 7));
+  // Montag ~ 0:00 testen
+  nextWeek.setDate(nextWeek.getDate() + ((1 + 7 - nextWeek.getDay()) % 7 || 7));
   nextWeek.setUTCDate(nextWeek.getUTCDate() + 1);
   nextWeek.setUTCHours(7, 30, 0, 0);
 
