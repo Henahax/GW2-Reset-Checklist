@@ -154,16 +154,16 @@ function EventTimer(props: any) {
   if (props.item.timer === undefined) {
     return <></>;
   }
-  var test: any = getNextEventTime(props.item.timer);
+  var nextEventTime: any = getNextEventTime(props.item.timer);
 
   if (getEventActive(props.item.timer)) {
     return (
       <div className="eventTimer eventActive">
         <div className="timerActive">Active!</div>
-        <div className="timerText">{test[2]}</div>
+        <div className="timerText">{nextEventTime[2]}</div>
         <div className="timerNumbers">
           <Countdown
-            date={test[0]}
+            date={nextEventTime[0]}
             daysInHours={true}
             zeroPadTime={2}
             renderer={renderer}
@@ -171,7 +171,7 @@ function EventTimer(props: any) {
           />
           <div>/</div>
           <div>
-            {zeroPad(test[1][0])}:{zeroPad(test[1][1])}:{"00"}
+            {zeroPad(nextEventTime[1][0])}:{zeroPad(nextEventTime[1][1])}:{"00"}
           </div>
         </div>
       </div>
@@ -179,8 +179,8 @@ function EventTimer(props: any) {
   } else {
     return (
       <div className="eventTimer">
-        <div>{test[2]}</div>
-        <Countdown date={test[0]} daysInHours={true} zeroPadTime={2} />
+        <div>{nextEventTime[2]}</div>
+        <Countdown date={nextEventTime[0]} daysInHours={true} zeroPadTime={2} />
       </div>
     );
   }
