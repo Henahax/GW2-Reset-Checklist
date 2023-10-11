@@ -445,9 +445,9 @@
     "category": "meta",
     "interval": "daily",
     "sort": 31,
-    "icon": "https://wiki.guildwars2.com/images/c/c1/Buried_Treasure.png",
+    "icon": "https://wiki.guildwars2.com/images/d/d8/Grasp_of_Joko.png",
     "info": "Domain of Istan Meta event",
-    "link": "https://wiki.guildwars2.com/wiki/The_Search_for_Buried_Treasure",
+    "link": "https://wiki.guildwars2.com/wiki/Palawadan,_Jewel_of_Istan_(meta_event)",
     "timer": {
       "duration": [0, 15],
       "times": [
@@ -473,9 +473,9 @@
     "category": "meta",
     "interval": "daily",
     "sort": 32,
-    "icon": "https://wiki.guildwars2.com/images/c/c1/Buried_Treasure.png",
+    "icon": "https://wiki.guildwars2.com/images/d/d7/Crystal_Infusion.png",
     "info": "Jahai Bluffs Meta event",
-    "link": "https://wiki.guildwars2.com/wiki/The_Search_for_Buried_Treasure",
+    "link": "https://wiki.guildwars2.com/wiki/Destroy_the_Death-Branded_Shatterer",
     "timer": {
       "duration": [0, 30],
       "times": [
@@ -501,9 +501,9 @@
     "category": "meta",
     "interval": "daily",
     "sort": 33,
-    "icon": "https://wiki.guildwars2.com/images/c/c1/Buried_Treasure.png",
+    "icon": "https://wiki.guildwars2.com/images/0/00/Light_of_Deldrimor_Plate.png",
     "info": "Thunderhead Peaks Meta events",
-    "link": "https://wiki.guildwars2.com/wiki/The_Search_for_Buried_Treasure",
+    "link": "https://wiki.guildwars2.com/wiki/Thunderhead_Keep_(meta_event)",
     "timer": {
       "duration": [0, 15],
       "times": [
@@ -541,9 +541,9 @@
     "category": "meta",
     "interval": "daily",
     "sort": 41,
-    "icon": "https://wiki.guildwars2.com/images/c/c1/Buried_Treasure.png",
+    "icon": "https://wiki.guildwars2.com/images/3/37/Drakkar%27s_Hoard.png",
     "info": "Thunderhead Peaks Meta events",
-    "link": "https://wiki.guildwars2.com/wiki/The_Search_for_Buried_Treasure",
+    "link": "https://wiki.guildwars2.com/wiki/Champion_of_the_Ice_Dragon",
     "timer": {
       "duration": [0, 35],
       "times": [
