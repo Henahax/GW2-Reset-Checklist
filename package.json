@@ -1,7 +1,7 @@
 {
   "name": "gw2-checklist",
   "private": true,
-  "version": "0.0.21",
+  "version": "0.0.22",
   "type": "module",
   "scripts": {
     "dev": "vite",
