@@ -176,6 +176,13 @@ function EventTimer(props: any) {
         </div>
       </div>
     );
+  }else if((nextEventTime[0].getTime() - new Date().getTime()) < (5*60*1000)){
+    return (
+      <div className="eventTimer eventSoon">
+        <div>{nextEventTime[2]}</div>
+        <Countdown date={nextEventTime[0]} daysInHours={true} zeroPadTime={2} />
+      </div>
+    );
   } else {
     return (
       <div className="eventTimer">
