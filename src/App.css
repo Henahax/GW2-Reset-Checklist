@@ -57,6 +57,11 @@ header #timers {
 .eventActive {
   color: greenyellow;
 }
+
+.eventSoon{
+  color: yellow;
+}
+
 .timerActive {
   display: inline-flex;
   margin: auto 0.25rem auto auto;
