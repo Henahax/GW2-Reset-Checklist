@@ -428,43 +428,18 @@ function getUTCTimeForStartOfNextDay() {
 
 function getUTCTimeForStartOfNextWeek() {
   const now = new Date();
-  const currentDay = now.getUTCDay(); // Get the current day (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
-  const currentHour = now.getUTCHours();
-  const currentMinute = now.getUTCMinutes();
+  var nextMonday = new Date()
 
-  if (currentDay === 1 && (currentHour < 7 || (currentHour === 7 && currentMinute < 30))) {
-    // If it's Monday and before 7:30 AM UTC, return 7:30 AM UTC on the current date
-    const nextMonday730 = new Date(now.getTime());
-    nextMonday730.setUTCHours(7, 30, 0, 0);
-    return nextMonday730;
+  while (nextMonday.getUTCDay() !== 1){
+    nextMonday.setUTCDate(nextMonday.getUTCDate() + 1)
   }
 
-  let daysUntilNextMonday = 1; // Default to next Monday
-
-  if (currentDay <= 1 || (currentDay === 2 && currentHour === 7 && currentMinute < 30)) {
-    // If today is Sunday, Monday, or Tuesday before 7:30 AM UTC, set it to next week
-    daysUntilNextMonday = 8 - currentDay;
+  nextMonday.setHours(7, 30, 0, 0)
+  if(nextMonday < now){
+    nextMonday.setUTCDate(nextMonday.getUTCDate() + 7);
   }
-
-  const nextMonday = new Date(now.getTime() + daysUntilNextMonday * 24 * 60 * 60 * 1000);
-
-  // Set the time to 7:30 AM UTC
-  nextMonday.setUTCHours(7, 30, 0, 0);
-
+  
   return nextMonday;
-
-
-  /*
-  const now = new Date();
-  const nextWeek = new Date(now);
-
-  // Montag ~ 0:00 testen
-  nextWeek.setDate(nextWeek.getDate() + ((1 + 7 - nextWeek.getDay()) % 7 || 7));
-  nextWeek.setUTCDate(nextWeek.getUTCDate() + 1);
-  nextWeek.setUTCHours(7, 30, 0, 0);
-
-  return nextWeek;
-  */
 }
 
 export default App;

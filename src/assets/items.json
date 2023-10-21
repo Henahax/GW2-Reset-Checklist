@@ -109,6 +109,16 @@
     "default": true
   },
   {
+    "id": "FuneraryIncense",
+    "name": "Funerary Incense",
+    "category": "misc",
+    "interval": "daily",
+    "icon": "https://wiki.guildwars2.com/images/5/53/Funerary_Incense.png",
+    "info": "Complete Domain of Vaabi Hearts to purchase Funerary Incense",
+    "link": "https://wiki.guildwars2.com/wiki/Funerary_Incense",
+    "default": false
+  },
+  {
     "id": "MistHardenedLockboxKey",
     "name": "Mist-Hardened Lockbox Key",
     "category": "merchants",
