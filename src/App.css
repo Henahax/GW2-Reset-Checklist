@@ -187,7 +187,7 @@ button:active {
 
 #settingCategories {
   padding: 1rem;
-  column-width: 20rem;
+  column-width: 24rem;
   column-count: 3;
   width: fit-content;
   margin: auto;
@@ -216,7 +216,7 @@ button:active {
 }
 
 #categories {
-  column-width: 32rem;
+  column-width: 24rem;
   column-count: 3;
   width: fit-content;
   margin: auto;
