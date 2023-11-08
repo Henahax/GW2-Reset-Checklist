@@ -56,12 +56,13 @@ function App() {
         </div>
         <div id="settings" className="hide">
           <div id="closeSettings">
+            <div className="settingsHeader">Displayes Items</div>
             <button onClick={toggleSettings}>x</button>
           </div>
-          <div className="settingsHeader">Displayes Items</div>
-
           <div id="settingCategories">
-            {categories.map((category) => (
+            {categories
+            .sort((a: any, b: any) => a.index - b.index)
+            .map((category) => (
               <div className="settingCategory">
                 <h4>{category.name}</h4>
                 <ul>
@@ -78,11 +79,16 @@ function App() {
               </div>
             ))}
           </div>
+          <div id="okSettings">
+            <button onClick={toggleSettings}>OK</button>
+          </div>
         </div>
       </header>
 
       <div id="categories">
-        {categories.map((category) => (
+        {categories
+        .sort((a: any, b: any) => a.index - b.index)
+        .map((category) => (
           <div className="category">
             <h2>{category.name}</h2>
             <ul>
@@ -176,7 +182,10 @@ function EventTimer(props: any) {
         </div>
       </div>
     );
-  }else if((nextEventTime[0].getTime() - new Date().getTime()) < (5*60*1000)){
+  } else if (
+    nextEventTime[0].getTime() - new Date().getTime() <
+    5 * 60 * 1000
+  ) {
     return (
       <div className="eventTimer eventSoon">
         <div>{nextEventTime[2]}</div>
@@ -244,22 +253,6 @@ function SettingsItem(props: any) {
           <div className="name">{props.item.name}</div>
           <div className="info">{props.item.info}</div>
         </div>
-        <a className="link" href={props.item.link}>
-          {props.item.link.length > 0 && (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              className="bi bi-info-circle"
-              viewBox="0 0 16 16"
-            >
-              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-              <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-            </svg>
-          )}
-        </a>
-        <div className="interval">{props.item.interval}</div>
       </label>
     </li>
   );

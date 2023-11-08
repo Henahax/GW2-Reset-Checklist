@@ -10,33 +10,33 @@
         "name": "Merchants"
       },
       {
-        "id" : "harvesting",
-        "index": 2,
-        "name": "Harvesting"
-      },
-      {
         "id" : "crafting",
-        "index": 3,
+        "index": 2,
         "name": "Crafting"
       },
       {
-        "id" : "meta",
-        "index": 4,
-        "name": "Meta Events"
-      },
-      {
-        "id" : "worldbosses",
-        "index": 4,
-        "name": "World Bosses"
-      },
-      {
-        "id" : "publicsquads",
-        "index": 5,
-        "name": "Public Squads"
+        "id" : "harvesting",
+        "index": 3,
+        "name": "Harvesting"
       },
       {
         "id" : "misc",
-        "index": 99,
+        "index": 6,
         "name": "Miscellaneous"
+      },
+      {
+        "id" : "publicsquads",
+        "index": 7,
+        "name": "Public Squads"
+      },
+      {
+        "id" : "worldbosses",
+        "index": 8,
+        "name": "World Bosses"
+      },
+      {
+        "id" : "meta",
+        "index": 9,
+        "name": "Meta Events"
       }
 ]
