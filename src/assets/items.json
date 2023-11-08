@@ -968,5 +968,29 @@
         [25, 0]
       ]
     }
+  },
+  {
+    "id": "Convergences",
+    "name": "Convergences",
+    "category": "publicsquads",
+    "interval": "daily",
+    "icon": "https://wiki.guildwars2.com/images/8/80/Convergence-Hero%27s_Choice_Chest.png",
+    "info": "Wizard's Tower",
+    "link": "https://wiki.guildwars2.com/wiki/Convergences",
+    "default": true,
+    "timer": {
+      "duration": [0, 15],
+      "times": [
+        [1, 30],
+        [4, 30],
+        [7, 30],
+        [10, 30],
+        [13, 30],
+        [16, 30],
+        [19, 30],
+        [22, 30],
+        [25, 30]
+      ]
+    }
   }
 ]
