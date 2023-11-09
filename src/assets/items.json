@@ -767,6 +767,17 @@
     }
   },
   {
+    "id": "InnerNayos",
+    "name": "Inner Nayos",
+    "category": "meta",
+    "interval": "daily",
+    "sort": 62,
+    "icon": "https://wiki.guildwars2.com/images/8/80/Convergence-Hero%27s_Choice_Chest.png",
+    "info": "Inner Nayos Meta event",
+    "link": "",
+    "default": false
+  },
+  {
     "id": "TripleTrouble",
     "name": "Triple Trouble",
     "category": "worldbosses",
@@ -979,17 +990,17 @@
     "link": "https://wiki.guildwars2.com/wiki/Convergences",
     "default": true,
     "timer": {
-      "duration": [0, 15],
+      "duration": [0, 10],
       "times": [
-        [1, 30],
-        [4, 30],
-        [7, 30],
-        [10, 30],
-        [13, 30],
-        [16, 30],
-        [19, 30],
-        [22, 30],
-        [25, 30]
+        [1, 30, "Access until instance is full"],
+        [4, 30, "Access until instance is full"],
+        [7, 30, "Access until instance is full"],
+        [10, 30, "Access until instance is full"],
+        [13, 30, "Access until instance is full"],
+        [16, 30, "Access until instance is full"],
+        [19, 30, "Access until instance is full"],
+        [22, 30, "Access until instance is full"],
+        [25, 30, "Access until instance is full"]
       ]
     }
   }
