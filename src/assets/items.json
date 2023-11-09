@@ -992,15 +992,15 @@
     "timer": {
       "duration": [0, 10],
       "times": [
-        [1, 30, "Access until instance is full"],
-        [4, 30, "Access until instance is full"],
-        [7, 30, "Access until instance is full"],
-        [10, 30, "Access until instance is full"],
-        [13, 30, "Access until instance is full"],
-        [16, 30, "Access until instance is full"],
-        [19, 30, "Access until instance is full"],
-        [22, 30, "Access until instance is full"],
-        [25, 30, "Access until instance is full"]
+        [1, 30],
+        [4, 30],
+        [7, 30],
+        [10, 30],
+        [13, 30],
+        [16, 30],
+        [19, 30],
+        [22, 30],
+        [25, 30]
       ]
     }
   }
