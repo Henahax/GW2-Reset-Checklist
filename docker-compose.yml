@@ -1,8 +1,8 @@
 version: "2.1"
 services:
   nginx:
-    image: henahax/gw2-checklist:latest
-    container_name: gw2-checklist
+    image: henahax/gw2-reset-checklist:latest
+    container_name: henahax-gw2-reset-checklist
     environment:
       - PUID=1000
       - PGID=1000
