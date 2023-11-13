@@ -56,7 +56,6 @@
     "icon": "https://wiki.guildwars2.com/images/f/f0/Fractal_Encryption_Key.png",
     "info": "Mistlock Observatory / Mistlock Sanctuary",
     "link": "https://wiki.guildwars2.com/wiki/Deeply_Discounted_Fractal_Encryption_Key",
-    "default": true
   },
   {
     "id": "DrizzlewoodMaterialDonations",
@@ -66,7 +65,6 @@
     "icon": "https://wiki.guildwars2.com/images/6/6d/Quaestor_%28overhead_icon%29.png",
     "info": "Drizzlewood Coast",
     "link": "https://fast.farming-community.eu/open-world/drizzlewood-material-donation",
-    "default": true
   },
   {
     "id": "ProvisionerTokens",
@@ -87,6 +85,15 @@
     "info": "Pact Supply Network Agents",
     "link": "https://wiki.guildwars2.com/wiki/Pact_Supply_Network_Agent#Locations",
     "default": true
+  },
+  {
+    "id": "DivineLuckyEnvelopes",
+    "name": "Divine Lucky Envelopes",
+    "category": "merchants",
+    "interval": "daily",
+    "icon": "https://wiki.guildwars2.com/images/9/96/Divine_Lucky_Envelope.png",
+    "info": "Lunar New Year festival",
+    "link": "https://wiki.guildwars2.com/wiki/Divine_Lucky_Envelope"
   },
   {
     "id": "AscendedCrafting",
@@ -116,7 +123,6 @@
     "icon": "https://wiki.guildwars2.com/images/5/53/Funerary_Incense.png",
     "info": "Complete Domain of Vaabi Hearts to purchase Funerary Incense",
     "link": "https://wiki.guildwars2.com/wiki/Funerary_Incense",
-    "default": false
   },
   {
     "id": "MistHardenedLockboxKey",
@@ -774,8 +780,7 @@
     "sort": 62,
     "icon": "https://wiki.guildwars2.com/images/5/51/Kryptis_Rift_Extraction.png",
     "info": "Inner Nayos Meta event",
-    "link": "",
-    "default": false
+    "link": "https://wiki.guildwars2.com/wiki/The_Road_to_Heitor"
   },
   {
     "id": "TripleTrouble",
@@ -852,6 +857,7 @@
     "icon": "https://wiki.guildwars2.com/images/6/67/Ley-Line_Anomaly_portrait.png",
     "info": "Legendary Ley-Line Anomaly",
     "link": "https://wiki.guildwars2.com/wiki/Legendary_Ley-Line_Anomaly",
+    "default": true,
     "timer": {
       "duration": [0, 20],
       "times": [
