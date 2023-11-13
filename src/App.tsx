@@ -12,7 +12,7 @@ function App() {
     <>
       <header>
         <div id="titles">
-          <h1 id="title">Checklist</h1>
+          <h1 id="title">Guild Wars 2 Reset Checklist</h1>
           <div id="timers">
             <div className="timerContainer">
               <div>Daily:</div>
@@ -48,7 +48,7 @@ function App() {
           </div>
         </div>
         <div id="subTitle">
-          <div id="subTitleLeft">Tasks without an ingame tracking system</div>
+          <div id="subTitleLeft">Timegated tasks without an ingame tracking system</div>
           <div id="subTitleRight">
             Open the settings menu to choose displayed items ({items.length}{" "}
             available)
@@ -61,23 +61,23 @@ function App() {
           </div>
           <div id="settingCategories">
             {categories
-            .sort((a: any, b: any) => a.index - b.index)
-            .map((category) => (
-              <div className="settingCategory">
-                <h4>{category.name}</h4>
-                <ul>
-                  {items
-                    .filter(function (item) {
-                      return item.category == category.id;
-                    })
-                    .sort((a, b) => a.interval.localeCompare(b.interval))
-                    .sort((a: any, b: any) => a.sort - b.sort)
-                    .map((item) => (
-                      <SettingsItem item={item} />
-                    ))}
-                </ul>
-              </div>
-            ))}
+              .sort((a: any, b: any) => a.index - b.index)
+              .map((category) => (
+                <div className="settingCategory">
+                  <h4>{category.name}</h4>
+                  <ul>
+                    {items
+                      .filter(function (item) {
+                        return item.category == category.id;
+                      })
+                      .sort((a, b) => a.interval.localeCompare(b.interval))
+                      .sort((a: any, b: any) => a.sort - b.sort)
+                      .map((item) => (
+                        <SettingsItem item={item} />
+                      ))}
+                  </ul>
+                </div>
+              ))}
           </div>
           <div id="okSettings">
             <button onClick={toggleSettings}>OK</button>
@@ -87,34 +87,32 @@ function App() {
 
       <div id="categories">
         {categories
-        .sort((a: any, b: any) => a.index - b.index)
-        .map((category) => (
-          <div className="category">
-            <h2>{category.name}</h2>
-            <ul>
-              {items
-                .filter(function (item) {
-                  return item.category == category.id;
-                })
-                .filter(function (item) {
-                  return getItemShown(item);
-                })
-                .sort((a, b) => a.name.localeCompare(b.name))
-                .sort((a, b) => a.interval.localeCompare(b.interval))
-                .sort((a: any, b: any) => a.sort - b.sort)
-                .map((item) => (
-                  <ListItem item={item} />
-                ))}
-            </ul>
-          </div>
-        ))}
+          .sort((a: any, b: any) => a.index - b.index)
+          .map((category) => (
+            <div className="category">
+              <h2>{category.name}</h2>
+              <ul>
+                {items
+                  .filter(function (item) {
+                    return item.category == category.id;
+                  })
+                  .filter(function (item) {
+                    return getItemShown(item);
+                  })
+                  .sort((a, b) => a.name.localeCompare(b.name))
+                  .sort((a, b) => a.interval.localeCompare(b.interval))
+                  .sort((a: any, b: any) => a.sort - b.sort)
+                  .map((item) => (
+                    <ListItem item={item} />
+                  ))}
+              </ul>
+            </div>
+          ))}
       </div>
 
-      <div id="footer">
-        <div id="sourcecode">
-          <a href="https://github.com/Henahax/GW2-Checklist">Sourcecode</a>
-        </div>
-      </div>
+      <footer>
+        © henahax.de 2023
+      </footer>
     </>
   );
 }
@@ -323,10 +321,10 @@ function getNextEventTime(timer: any) {
   for (let i = 0; i < timer.times.length; i++) {
     if (
       startOfThisDay +
-        timer.times[i][0] * 60 * 60 * 1000 +
-        timer.times[i][1] * 60 * 1000 +
-        timer.duration[0] * 60 * 60 * 1000 +
-        timer.duration[1] * 60 * 1000 >
+      timer.times[i][0] * 60 * 60 * 1000 +
+      timer.times[i][1] * 60 * 1000 +
+      timer.duration[0] * 60 * 60 * 1000 +
+      timer.duration[1] * 60 * 1000 >
       now.getTime()
     ) {
       nextEventTime =
@@ -352,15 +350,15 @@ function getEventActive(timer: any) {
   for (let i = 0; i < timer.times.length; i++) {
     if (
       startOfThisDay +
-        timer.times[i][0] * 60 * 60 * 1000 +
-        timer.times[i][1] * 60 * 1000 <
-        now.getTime() &&
+      timer.times[i][0] * 60 * 60 * 1000 +
+      timer.times[i][1] * 60 * 1000 <
+      now.getTime() &&
       startOfThisDay +
-        timer.times[i][0] * 60 * 60 * 1000 +
-        timer.times[i][1] * 60 * 1000 +
-        timer.duration[0] * 60 * 60 * 1000 +
-        timer.duration[1] * 60 * 1000 >
-        now.getTime()
+      timer.times[i][0] * 60 * 60 * 1000 +
+      timer.times[i][1] * 60 * 1000 +
+      timer.duration[0] * 60 * 60 * 1000 +
+      timer.duration[1] * 60 * 1000 >
+      now.getTime()
     ) {
       isActive = true;
       break;
@@ -430,15 +428,15 @@ function getUTCTimeForStartOfNextWeek() {
   const now = new Date();
   var nextMonday = new Date()
 
-  while (nextMonday.getUTCDay() !== 1){
+  while (nextMonday.getUTCDay() !== 1) {
     nextMonday.setUTCDate(nextMonday.getUTCDate() + 1)
   }
 
   nextMonday.setHours(7, 30, 0, 0)
-  if(nextMonday < now){
+  if (nextMonday < now) {
     nextMonday.setUTCDate(nextMonday.getUTCDate() + 7);
   }
-  
+
   return nextMonday;
 }
 

@@ -78,7 +78,7 @@ header #timers {
 }
 
 h1 {
-  font-size: xx-large;
+  font-size: x-large;
   margin: 0;
 }
 
@@ -381,12 +381,8 @@ li:has(input[type="checkbox"]:checked) .rightBottom {
   font-size: 0.75rem;
 }
 
-#footer {
-  display: inline-flex;
-  width: 100%;
+footer {
   font-size: smaller;
-}
-
-#footer > * {
-  margin: 1rem auto;
+  text-align: center;
+  opacity: 0.5;
 }
