@@ -1,0 +1,8 @@
+---
+import Category from "./Category.astro";
+import categories from "../../public/categories.json";
+---
+
+<div class="categories columns-3 mx-auto w-fit">
+	{categories.map((category) => <Category {category} />)}
+</div>

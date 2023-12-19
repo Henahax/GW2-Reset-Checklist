@@ -1,0 +1,38 @@
+---
+import Item from "./Item.svelte";
+import items from "../../public/items.json";
+
+const { category } = Astro.props;
+---
+
+<div class="category break-inside-avoid-column bg-zinc-900 border border-neutral-700 rounded-2xl px-2 py-2 h-fit max-w-lg mx-auto mb-4 shadow-xl">
+	<div class="inline-flex w-full">
+		<div class="text-xl w-8 hidden">
+			<i class="fa-solid fa-check"></i>
+		</div>
+		<h2 class="font-bold w-full mx-2">{category.name}</h2>
+	</div>
+	<ul class="flex flex-col divide-y divide-neutral-700">
+		{
+			items
+				.filter((item) => item.category.indexOf(category.id) !== -1)
+				.sort((a, b) => a.interval.localeCompare(b.interval))
+				.map((item) => <Item client:only="svelte" item={item}/>)
+		}
+	</ul>
+</div>
+
+<style>
+	.category:not(:has(li)) {
+    	@apply hidden
+	}
+	.category:not(:has(input[type="checkbox"]:not(:checked))){
+		@apply opacity-75
+	}
+	.category:not(:has(input[type="checkbox"]:not(:checked))) h2 {
+		@apply text-xs mx-3;
+	}
+</style>
+
+								
+

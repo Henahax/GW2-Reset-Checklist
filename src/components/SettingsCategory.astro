@@ -1,0 +1,19 @@
+---
+import SettingsItem from "./SettingsItem.svelte";
+import items from "../../public/items.json";
+
+const { category } = Astro.props;
+---
+
+<div class="settingsCategory mb-4 break-inside-avoid-column">
+	<div class="inline-flex">
+<h2 class="text-l font-bold mx-1">{category.name}</h2>
+	</div>
+	<ul class="flex flex-col gap-0">
+		{
+			items
+				.filter((item) => item.category.indexOf(category.id) !== -1)
+				.map((item) => <SettingsItem client:only="svelte" item={item}/>)
+		}
+	</ul>
+</div>
