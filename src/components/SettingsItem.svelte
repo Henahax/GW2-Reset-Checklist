@@ -3,7 +3,7 @@
 
 	export let item: object;
 
-	let checked: boolean | null = false;
+	let checked: boolean | null = null;
 
 	function getChecked(): boolean {
 		const cookieValue = getCookieValue('setting' + item.id);
