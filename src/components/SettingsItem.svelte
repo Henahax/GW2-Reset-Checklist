@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-
 	export let item: object;
 
 	let checked: boolean | null = null;
@@ -29,7 +28,7 @@
 		const expires = now.getTime() + 1000 * 60 * 60 * 24 * 365 * 10;
 		now.setTime(expires);
 
-		document.cookie = `setting${item.id}=${event.target.checked}; expires=${now.toUTCString()}`;
+		document.cookie = `setting${item.id}=${getChecked()}; expires=${now.toUTCString()}`;
 	}
 
 	onMount(() => {
@@ -43,7 +42,7 @@
 			id={'setting' + item.id}
 			type="checkbox"
 			class="m-1 w-6 h-6"
-			{checked}
+			bind:checked
 			on:click={setCookie}
 		/>
 		<div class="m-1 my-auto">
