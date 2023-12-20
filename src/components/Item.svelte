@@ -5,20 +5,20 @@
 	export let item: Item;
 
 	type Item = {
-  id: string;
-  name: string;
-  category: string;
-  interval: string;
-  sort: number;
-  icon: string;
-  info: string;
-  link: string;
-  default?: boolean;
-  timer?: {
-    duration: [number, number];
-    times: Array<[number, number, string?]>;
-  };
-};
+		id: string;
+		name: string;
+		category: string;
+		interval: string;
+		sort: number;
+		icon: string;
+		info: string;
+		link: string;
+		default?: boolean;
+		timer?: {
+			duration: [number, number];
+			times: Array<[number, number, string?]>;
+		};
+	};
 
 	let checked = false;
 
@@ -46,7 +46,7 @@
 		return null;
 	}
 
-	function setCookie(event:Event) {
+	function setCookie(event: Event) {
 		let time = new Date();
 		if (item.interval === 'daily') {
 			time = getUTCTimeForStartOfNextDay();
@@ -88,7 +88,7 @@
 </script>
 
 {#if getDisplayed()}
-	<li class="inline-flex py-2 mx-2">
+	<li class="inline-flex py-2 mx-2 transition gap-4 duration-1000 ease-in-out">
 		<label
 			class="inline-flex w-full text-neutral-100 transition duration-500 ease-in-out hover:brightness-125"
 		>
