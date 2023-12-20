@@ -1,6 +1,22 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	export let item: object;
+	export let item: Item;
+
+	type Item = {
+		id: string;
+		name: string;
+		category: string;
+		interval: string;
+		sort: number;
+		icon: string;
+		info: string;
+		link: string;
+		default?: boolean;
+		timer?: {
+			duration: [number, number];
+			times: Array<[number, number, string?]>;
+		};
+	};
 
 	let checked: boolean | null = null;
 
@@ -23,12 +39,12 @@
 		return null;
 	}
 
-	function setCookie(event) {
+	function setCookie(event: Event) {
 		const now = new Date();
 		const expires = now.getTime() + 1000 * 60 * 60 * 24 * 365 * 10;
 		now.setTime(expires);
 
-		document.cookie = `setting${item.id}=${getChecked()}; expires=${now.toUTCString()}`;
+		document.cookie = `setting${item.id}=${event.target.checked}; expires=${now.toUTCString()}`;
 	}
 
 	onMount(() => {

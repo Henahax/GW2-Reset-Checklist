@@ -2,7 +2,24 @@
 	import { onMount } from 'svelte';
 	import EventTimer from './EventTimer.svelte';
 
-	export let item: object;
+	export let item: Item;
+
+	type Item = {
+  id: string;
+  name: string;
+  category: string;
+  interval: string;
+  sort: number;
+  icon: string;
+  info: string;
+  link: string;
+  default?: boolean;
+  timer?: {
+    duration: [number, number];
+    times: Array<[number, number, string?]>;
+  };
+};
+
 	let checked = false;
 
 	function getDisplayed(): boolean {
@@ -29,7 +46,7 @@
 		return null;
 	}
 
-	function setCookie(event) {
+	function setCookie(event:Event) {
 		let time = new Date();
 		if (item.interval === 'daily') {
 			time = getUTCTimeForStartOfNextDay();

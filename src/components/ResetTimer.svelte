@@ -12,10 +12,10 @@
 	}
 
 	interface TimeRemaining {
-		days: number
-		hours: number
-		minutes: number
-		seconds: number
+		days: string
+		hours: string
+		minutes: string
+		seconds: string
 	}
 
 	function calculateTimeRemaining(): TimeRemaining {

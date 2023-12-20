@@ -1,8 +1,26 @@
 ---
 import SettingsItem from "./SettingsItem.svelte";
-import items from "../../public/items.json";
+import json from "../../public/items.json";
 
 const { category } = Astro.props;
+
+type Item = {
+  id: string;
+  name: string;
+  category: string;
+  interval: string;
+  sort: number;
+  icon: string;
+  info: string;
+  link: string;
+  default?: boolean;
+  timer?: {
+    duration: [number, number];
+    times: Array<[number, number, string?]>;
+  };
+};
+
+const items: Item[] = json as Item[];
 ---
 
 <div class="settingsCategory mb-4 break-inside-avoid-column">
@@ -12,8 +30,8 @@ const { category } = Astro.props;
 	<ul class="flex flex-col gap-0">
 		{
 			items
-				.filter((item) => item.category.indexOf(category.id) !== -1)
-				.map((item) => <SettingsItem client:only="svelte" item={item}/>)
+				.filter((item:Item) => item.category.indexOf(category.id) !== -1)
+				.map((item:Item) => <SettingsItem client:only="svelte" item={item}/>)
 		}
 	</ul>
 </div>
