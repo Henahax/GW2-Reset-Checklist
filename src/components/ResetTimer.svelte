@@ -33,6 +33,10 @@
 		const now = new Date().getTime()
 		const difference = targetDate.getTime() - now
 
+		if(difference <= 0 ){
+			location.reload()
+		}
+
 		const days = Math.max(0, Math.floor(difference / (1000 * 60 * 60 * 24)))
 			.toString()
 			.padStart(2, '0')
