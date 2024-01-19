@@ -97,7 +97,7 @@
 </script>
 
 <div
-	class="eventTimer text-right text-xs"
+	class="text-right text-xs"
 	class:text-neutral-300={!active && !soon}
 	class:text-lime-500={active}
 	class:text-yellow-300={soon}
