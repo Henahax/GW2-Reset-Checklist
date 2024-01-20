@@ -26,7 +26,7 @@
       {listVisible ? "–" : "+"}
     </div>
   </button>
-  <ul class="class flex flex-col divide-y divide-zinc-800 overflow-hidden">
+  <ul class="class flex flex-col divide-y divide-zinc-800 overflow-y-hidden">
     {#each items.filter((item) => item.category.indexOf(category.id) !== -1) as item}
       <Task {item} />
     {/each}
