@@ -24,7 +24,7 @@
       </button>
     </div>
   </header>
-  <div class="grid gap-4 m-2">
+  <div class="test grid gap-4 m-2">
     {#each categories as category}
       <Card {category} />
     {/each}

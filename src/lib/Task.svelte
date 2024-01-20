@@ -1,6 +1,7 @@
 <script lang="ts">
   import EventTimer from "./EventTimer.svelte";
-  export let item;
+  import type { Item } from "../types";
+  export let item: Item;
 </script>
 
 <li class="inline-flex py-1 justify-between gap-2">
@@ -57,9 +58,5 @@
 
   li:has(input:checked) .info {
     @apply hidden;
-  }
-
-  i:hover span {
-    display: block;
   }
 </style>
