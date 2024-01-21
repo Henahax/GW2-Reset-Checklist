@@ -5,7 +5,7 @@
 </script>
 
 <main class="w-fit m-auto">
-  <header class="flex flex-wrap p-2 justify-between w-full">
+  <header class="flex flex-wrap p-4 justify-between w-full">
     <div>
       <h1 class="text-2xl">Guild Wars 2 Reset Checklist</h1>
       <h2 class="text-xs">Timegated tasks without an ingame tracking system</h2>
@@ -24,12 +24,20 @@
       </button>
     </div>
   </header>
-  <div class="test grid gap-4 m-2">
+  <div class="test gap-4 px-4">
     {#each categories as category}
       <Card {category} />
     {/each}
   </div>
+  <footer class="p-4 text-center text-sm text-neutral-400">
+    © henahax.de 2024
+  </footer>
 </main>
 
 <style>
+  .test {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: subgrid;
+  }
 </style>
