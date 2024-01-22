@@ -5,10 +5,11 @@ export interface TimeRemaining {
   seconds: number;
 }
 
-export interface Category{
-  id: string,
-  index: number,
-  name: string
+export interface Category {
+  id: string;
+  name: string;
+  index: number;
+  tasks: [Item[]];
 }
 
 export interface Item {

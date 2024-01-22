@@ -1,6 +1,6 @@
 <script>
   import SettingsCategory from "./SettingsCategory.svelte";
-  import categories from "../assets/categories.json";
+  import data from "../assets/data.json";
 
   let visible = false;
 
@@ -18,15 +18,20 @@
 {#if visible}
   <dialog
     open
-    class="settings absolute mr-4 mt-10 rounded-xl border bg-neutral-800 w-fit"
+    class="settings absolute mr-4 mt-10 rounded-xl border bg-neutral-900 border-neutral-500 w-fit"
   >
-    <div class="text-left p-2">Displayed items</div>
+    <div class="text-left p-2 mx-1 font-bold text-lg">Displayed items</div>
     <div class="settingsContainer px-2">
-      {#each categories as category}
+      {#each data as category}
         <SettingsCategory {category} />
       {/each}
     </div>
-    <button class="rounded-full bg-neutral-500 px-2" on:click={show}>Ok</button>
+    <div class="inline-flex w-full">
+      <button
+        class="rounded-full bg-neutral-800 px-4 mx-auto my-2 border border-neutral-500"
+        on:click={show}>Ok</button
+      >
+    </div>
   </dialog>
 {/if}
 
@@ -36,6 +41,6 @@
   }
 
   .settingsContainer {
-    columns: 3 18rem;
+    columns: 3 16rem;
   }
 </style>

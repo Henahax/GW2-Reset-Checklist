@@ -1,15 +1,14 @@
 <script lang="ts">
   import SettingsItem from "./SettingsItem.svelte";
-  import items from "../assets/items.json";
   import type { Category } from "../types";
 
   export let category: Category;
 </script>
 
-<div class="break-inside-avoid">
-  <div class="text-left">{category.name}</div>
+<div class="break-inside-avoid pb-4">
+  <div class="mx-1">{category.name}</div>
   <ul>
-    {#each items.filter((item) => item.category.indexOf(category.id) !== -1) as item}
+    {#each category.tasks as item}
       <SettingsItem {item} />
     {/each}
   </ul>

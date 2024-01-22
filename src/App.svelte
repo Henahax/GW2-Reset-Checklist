@@ -1,8 +1,8 @@
 <script lang="ts">
   import ResetTimer from "./lib/ResetTimer.svelte";
-  import Card from "./lib/Card.svelte";
-  import categories from "./assets/categories.json";
   import Settings from "./lib/Settings.svelte";
+  import Card from "./lib/Card.svelte";
+  import data from "./assets/data.json";
 </script>
 
 <main class="w-fit m-auto">
@@ -11,20 +11,22 @@
       <h1 class="text-2xl">Guild Wars 2 Reset Checklist</h1>
       <h2 class="text-xs">Timegated tasks without an ingame tracking system</h2>
     </div>
-    <div class="inline-flex text-right text-xs gap-2 h-fit ml-auto mr-0 py-2">
-      <div>
-        <div>Daily:</div>
-        <ResetTimer mode={1} />
-      </div>
-      <div>
-        <div>Weekly:</div>
-        <ResetTimer mode={2} />
+    <div class="inline-flex gap-4 items-center">
+      <div class="inline-flex text-sm gap-2 text-right">
+        <div>
+          <div>Daily:</div>
+          <ResetTimer mode={1} />
+        </div>
+        <div>
+          <div>Weekly:</div>
+          <ResetTimer mode={2} />
+        </div>
       </div>
       <Settings />
     </div>
   </header>
-  <div class="test gap-4 px-4">
-    {#each categories as category}
+  <div class="categories gap-4 px-4">
+    {#each data as category}
       <Card {category} />
     {/each}
   </div>
@@ -34,7 +36,7 @@
 </main>
 
 <style>
-  .test {
+  .categories {
     columns: 3 24rem;
   }
 </style>

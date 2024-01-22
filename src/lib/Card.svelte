@@ -1,10 +1,10 @@
 <script lang="ts">
   import { slide } from "svelte/transition";
   import { scale } from "svelte/transition";
+  import type { Category } from "../types";
   import Task from "./Task.svelte";
-  import items from "../assets/items.json";
 
-  export let category;
+  export let category: Category;
 
   let visible = true;
   function toggle() {
@@ -12,7 +12,9 @@
   }
 </script>
 
-<div class="border border-neutral-700 rounded-xl px-4 py-2 bg-stone-900 break-inside-avoid mb-4">
+<div
+  class="border border-neutral-700 rounded-xl px-4 py-2 bg-stone-900 break-inside-avoid mb-4"
+>
   <button
     on:click={toggle}
     class="flex w-full text-left text-md font-bold justify-between items-center"
@@ -29,7 +31,7 @@
       transition:slide
       class="class flex flex-col divide-y divide-zinc-800 overflow-y-hidden"
     >
-      {#each items.filter((item) => item.category.indexOf(category.id) !== -1) as item}
+      {#each category.tasks as item}
         <Task {item} />
       {/each}
     </ul>
