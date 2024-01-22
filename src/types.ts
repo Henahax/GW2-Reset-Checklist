@@ -5,6 +5,12 @@ export interface TimeRemaining {
   seconds: number;
 }
 
+export interface Category{
+  id: string,
+  index: number,
+  name: string
+}
+
 export interface Item {
   id: string;
   name: string;

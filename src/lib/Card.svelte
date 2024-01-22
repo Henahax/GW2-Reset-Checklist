@@ -12,7 +12,7 @@
   }
 </script>
 
-<div class="border border-neutral-700 rounded-xl px-4 py-2 bg-stone-900 h-fit">
+<div class="border border-neutral-700 rounded-xl px-4 py-2 bg-stone-900 break-inside-avoid mb-4">
   <button
     on:click={toggle}
     class="flex w-full text-left text-md font-bold justify-between items-center"

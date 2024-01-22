@@ -98,9 +98,9 @@
   }
 </script>
 
-<div class:text-lime-500={active} class:text-yellow-300={soon}>
+<div class="flex flex-col items-end" class:text-lime-500={active} class:text-yellow-300={soon}>
   {#if add.length > 0}
-    <div>
+    <div class="w-max">
       {add}
     </div>
   {/if}

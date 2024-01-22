@@ -2,6 +2,7 @@
   import ResetTimer from "./lib/ResetTimer.svelte";
   import Card from "./lib/Card.svelte";
   import categories from "./assets/categories.json";
+  import SettingsMenu from "./lib/SettingsMenu.svelte";
 </script>
 
 <main class="w-fit m-auto">
@@ -19,12 +20,10 @@
         <div>Weekly:</div>
         <ResetTimer mode={2} />
       </div>
-      <button class="text-2xl">
-        <i class="fa-solid fa-gear self-center" />
-      </button>
+      <SettingsMenu/>
     </div>
   </header>
-  <div class="test gap-4 px-4">
+  <div class="columns-1 lg:columns-2 2xl:columns-3 4xl:columns-4 gap-4 px-4">
     {#each categories as category}
       <Card {category} />
     {/each}
@@ -35,9 +34,4 @@
 </main>
 
 <style>
-  .test {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: subgrid;
-  }
 </style>

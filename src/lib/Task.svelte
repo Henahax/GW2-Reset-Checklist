@@ -6,7 +6,7 @@
 
 <li class="inline-flex py-1 justify-between gap-2">
   <label class="inline-flex items-center gap-4 w-full">
-    <input type="checkbox" class="w-6 h-6" />
+    <input type="checkbox" class="w-6 h-6 shrink-0" />
     <img src={item.icon} alt={item.name} class="icon w-8 h-8" />
     <div>
       <h4 class="text-sm">{item.name}</h4>
