@@ -98,7 +98,11 @@
   }
 </script>
 
-<div class="flex flex-col items-end" class:text-lime-500={active} class:text-yellow-300={soon}>
+<div
+  class="eventTimer flex flex-col items-end"
+  class:text-lime-500={active}
+  class:text-yellow-300={soon}
+>
   {#if add.length > 0}
     <div class="w-max">
       {add}
@@ -120,3 +124,6 @@
     {/if}
   </div>
 </div>
+
+<style>
+</style>
