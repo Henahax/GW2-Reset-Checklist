@@ -6,12 +6,12 @@
 </script>
 
 <main class="w-fit m-auto">
-  <header class="inline-flex p-4 justify-between w-full gap-4">
+  <header class="inline-flex justify-between w-full gap-4 p-4">
     <div class="text-wrap">
       <h1 class="text-2xl">Guild Wars 2 Reset Checklist</h1>
       <h2 class="text-xs">Timegated tasks without an ingame tracking system</h2>
     </div>
-    <div class="inline-flex gap-4">
+    <div class="inline-flex gap-4 items-center">
       <div class="flex text-right text-sm flex-wrap gap-2 items-end justify-end">
         <div>
           <div>Daily:</div>
