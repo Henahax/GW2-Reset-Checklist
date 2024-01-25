@@ -16,14 +16,14 @@
 </script>
 
 <div>
-  <button class="text-2xl" on:click={show}>
+  <button class="text-2xl hover:scale-110" on:click={show}>
     <i class="fa-solid fa-gear self-center" />
   </button>
 
   <dialog id="settings" class="absolute border rounded-xl border-neutral-500">
     <div class="inline-flex text-left font-bold text-lg justify-between w-full px-3 py-1">
       Displayed items
-      <button class="text-2xl" on:click={show}>
+      <button class="text-2xl hover:scale-110" on:click={show}>
         <i class="fa-solid fa-xmark self-center" />
       </button>
     </div>
@@ -34,7 +34,7 @@
     </div>
     <div class="inline-flex w-full">
       <button
-        class="rounded-full bg-neutral-800 px-4 mx-auto my-2 border border-neutral-500"
+        class="rounded-full bg-neutral-800 px-4 mx-auto my-2 border border-neutral-500 hover:scale-110"
         on:click={show}>Ok</button
       >
     </div>

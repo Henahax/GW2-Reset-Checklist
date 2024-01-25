@@ -13,7 +13,7 @@
 </script>
 
 <div
-  class="border border-neutral-700 rounded-xl px-4 py-2 bg-stone-900 break-inside-avoid mb-4"
+  class="test border border-neutral-700 rounded-xl px-4 py-2 bg-stone-900 break-inside-avoid mb-4"
 >
   <button
     on:click={toggle}
@@ -39,4 +39,8 @@
 </div>
 
 <style>
+  .test:not(:has(input[type="checkbox"]:not(:checked))){
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
 </style>
