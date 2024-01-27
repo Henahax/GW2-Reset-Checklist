@@ -25,7 +25,7 @@ function getUTCTimeForStartOfNextWeek() {
 }
 
 export function getCookieValue(cookieName: string) {
-  const cookies = document.cookie.split(";");
+  const cookies = document.cookie.split("; ");
 
   for (const cookie of cookies) {
     const [name, value] = cookie.split("=");
@@ -37,8 +37,9 @@ export function getCookieValue(cookieName: string) {
   return null;
 }
 
-export function setCookie(event: Event, item: Item, type: string) {
+export function setCookie(item: Item, type: string, checked: boolean) {
   let time = new Date();
+
   //In 10 years for settings
   let expires = time.getTime() + 1000 * 60 * 60 * 24 * 365 * 10;
   time.setTime(expires);
@@ -49,7 +50,7 @@ export function setCookie(event: Event, item: Item, type: string) {
   if (item.interval === "weekly") {
     time = getUTCTimeForStartOfNextWeek();
   }
-  document.cookie = `${item.id + type}=${
-    event.target.checked
-  }; expires=${time.toUTCString()}`;
+
+  document.cookie =
+    item.id + type + "=" + checked + ";expires=" + time + ";path=/";
 }
