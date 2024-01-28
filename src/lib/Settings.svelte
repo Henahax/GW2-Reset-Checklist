@@ -34,7 +34,7 @@
     </div>
     <div class="inline-flex w-full">
       <button
-        class="rounded-full bg-neutral-800 px-4 mx-auto my-2 border border-neutral-500 hover:scale-110"
+        class="rounded-full bg-neutral-800 py-1 px-6 mx-auto my-4 border border-neutral-500 hover:scale-110"
         on:click={show}>Ok</button
       >
     </div>
