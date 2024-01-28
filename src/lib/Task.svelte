@@ -3,16 +3,23 @@
   import type { Item } from "../types";
   import { getCookieValue } from "../functions";
   import { setCookie } from "../functions";
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher } from "svelte";
+  import { slide } from "svelte/transition";
+  import { fade } from "svelte/transition";
 
-  const dispatch = createEventDispatcher()
+  const dispatch = createEventDispatcher();
   function toggle() {
-     dispatch('toggle');
+    dispatch("toggle");
+  }
+
+  function tasksDone() {
+    dispatch("tasksDone");
   }
 
   export let item: Item;
 
   let displayed = getDisplayed();
+  let checked = getChecked();
 
   function getDisplayed() {
     let displayed = getCookieValue(item.id + ".displayed");
@@ -35,8 +42,9 @@
 
   function setChecked(event) {
     toggle();
+    tasksDone();
     setCookie(item, ".checked", event.target.checked);
-
+    checked = event.target.checked;
   }
 </script>
 
@@ -46,13 +54,20 @@
       <input
         type="checkbox"
         class="w-6 h-6 shrink-0"
-        checked={getChecked()}
+        {checked}
         on:click={setChecked}
       />
       <img src={item.icon} alt={item.name} class="icon w-8 h-8" />
       <div>
         <h4 class="text-sm">{item.name}</h4>
-        <h5 class="text-xs text-neutral-400">{item.info}</h5>
+        {#if !checked}
+          <h5
+            class="text-xs text-neutral-400"
+            transition:fade={{ duration: 250 }}
+          >
+            {item.info}
+          </h5>
+        {/if}
       </div>
     </label>
     <div class="info text-right text-xs text-neutral-400 self-center">
@@ -88,7 +103,7 @@
           </div>
         {/if}
       </div>
-      {#if item.timer}
+      {#if !checked && item.timer}
         <EventTimer timer={item.timer} />
       {/if}
     </div>
@@ -101,7 +116,7 @@
   }
 
   li:has(input:checked) input {
-    @apply w-5 h-5 ml-1 p-2;
+    @apply w-5 h-5 mx-0.5 p-2;
   }
 
   li:has(input:checked) .icon {
@@ -110,14 +125,6 @@
 
   li:has(input:checked) h4 {
     @apply text-xs;
-  }
-
-  li:has(input:checked) h5 {
-    @apply hidden;
-  }
-
-  :global(li:has(input:checked) .eventTimer) {
-    @apply hidden;
   }
 
   .tooltip {

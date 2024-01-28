@@ -1,5 +1,6 @@
 <script lang="ts">
-  	import { slide } from 'svelte/transition';
+  import { onMount } from "svelte";
+  import { slide } from "svelte/transition";
   import type { Category } from "../types";
   import Task from "./Task.svelte";
 
@@ -7,41 +8,63 @@
 
   let value = "-";
   let closed = false;
+  let allDone = false;
+
+  onMount(async () => {
+    toggle2();
+    tasksDone();
+  });
 
   function toggle() {
     closed = !closed;
     value = closed === true ? "+" : "-";
   }
 
-  function toggle2(){
-    var selector = "." + category.id + ":not(:has(input[type='checkbox']:not(:checked)))";
-    if(document.querySelectorAll(selector).length > 0){
+  function toggle2() {
+    if (
+      document.querySelectorAll(
+        "." + category.id + ":not(:has(input[type='checkbox']:not(:checked)))"
+      ).length > 0
+    ) {
       toggle();
     }
+  }
+
+  function tasksDone() {
+    allDone =
+      document.querySelectorAll(
+        "." + category.id + ":not(:has(input[type='checkbox']:not(:checked)))"
+      ).length > 0;
   }
 </script>
 
 <div
-  class="card {category.id} border border-neutral-700 rounded-xl px-4 py-2 bg-stone-900 break-inside-avoid mb-4"
-  on:load={toggle2}
-  >
+  class="card {category.id} border border-neutral-700 rounded-xl bg-stone-900 break-inside-avoid mb-4"
+>
   <button
     on:click={toggle}
-    class="flex w-full text-left text-md font-bold justify-between items-center"
+    class="flex w-full text-left text-md font-bold justify-between items-center px-3 py-2"
+    class:text-sm={allDone}
   >
     {category.name}
-    <div class="text-center w-3">{value}</div>
+    {#key closed}
+      <div class="text-center w-3">
+        {value}
+      </div>
+    {/key}
   </button>
 
-  <ul transition:slide
-  class="class flex flex-col divide-y divide-zinc-800 overflow-y-hidden"
-  class:hidden={closed}
-  >
-    {#each category.tasks as item}
-      <Task {item} on:toggle={toggle2} />
-    {/each}
-  </ul>
-
+  {#key closed}
+    <ul
+      transition:slide={{ duration: 1000 }}
+      class:hidden={closed}
+      class="flex flex-col divide-y divide-zinc-800 px-3 pb-1"
+    >
+      {#each category.tasks.sort( (a, b) => a.interval.localeCompare(b.interval) ) as item}
+        <Task {item} on:toggle={toggle2} on:tasksDone={tasksDone} />
+      {/each}
+    </ul>
+  {/key}
 </div>
 
 <style>
@@ -49,9 +72,7 @@
     opacity: 0.5;
   }
 
-  .card:has(ul:empty){
+  .card:has(ul:empty) {
     @apply hidden;
   }
-
-
 </style>
