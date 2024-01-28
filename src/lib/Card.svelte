@@ -44,7 +44,6 @@
 
 </div>
 
-
 <style>
   .card:not(:has(input[type="checkbox"]:not(:checked))) {
     opacity: 0.5;
