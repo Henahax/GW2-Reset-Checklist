@@ -6,21 +6,19 @@
 
   export let category: Category;
 
-  let value = "-";
   let closed = false;
   let allDone = false;
 
   onMount(async () => {
-    toggle2();
+    toggleAuto();
     tasksDone();
   });
 
   function toggle() {
     closed = !closed;
-    value = closed === true ? "+" : "-";
   }
 
-  function toggle2() {
+  function toggleAuto() {
     if (
       document.querySelectorAll(
         "." + category.id + ":not(:has(input[type='checkbox']:not(:checked)))"
@@ -47,11 +45,13 @@
     class:text-sm={allDone}
   >
     {category.name}
-    {#key closed}
-      <div class="text-center w-3">
-        {value}
-      </div>
-    {/key}
+    <div class="text-center w-3 text-xs">
+      {#if closed}
+        <i class="fa-solid fa-plus"></i>
+      {:else}
+        <i class="fa-solid fa-minus"></i>
+      {/if}
+    </div>
   </button>
 
   {#key closed}
@@ -61,7 +61,7 @@
       class="flex flex-col divide-y divide-zinc-800 px-3 pb-1"
     >
       {#each category.tasks.sort( (a, b) => a.interval.localeCompare(b.interval) ) as item}
-        <Task {item} on:toggle={toggle2} on:tasksDone={tasksDone} />
+        <Task {item} on:toggle={toggleAuto} on:tasksDone={tasksDone} />
       {/each}
     </ul>
   {/key}
@@ -69,10 +69,10 @@
 
 <style>
   .card:not(:has(input[type="checkbox"]:not(:checked))) {
-    opacity: 0.5;
+    @apply opacity-50;
   }
 
   .card:has(ul:empty) {
-    @apply hidden;
+    @apply invisible;
   }
 </style>

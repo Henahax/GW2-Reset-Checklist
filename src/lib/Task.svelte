@@ -4,8 +4,23 @@
   import { getCookieValue } from "../functions";
   import { setCookie } from "../functions";
   import { createEventDispatcher } from "svelte";
-  import { slide } from "svelte/transition";
   import { fade } from "svelte/transition";
+
+  let showInfoTooltip = false;
+  let showDailyTooltip = false;
+  let showWeeklyTooltip = false;
+
+  function toolTipInfo() {
+    showInfoTooltip = !showInfoTooltip;
+  }
+
+  function toolTipDaily() {
+    showDailyTooltip = !showDailyTooltip;
+  }
+
+  function toolTipWeekly() {
+    showWeeklyTooltip = !showWeeklyTooltip;
+  }
 
   const dispatch = createEventDispatcher();
   function toggle() {
@@ -41,10 +56,10 @@
   }
 
   function setChecked(event) {
-    toggle();
-    tasksDone();
     setCookie(item, ".checked", event.target.checked);
     checked = event.target.checked;
+    toggle();
+    tasksDone();
   }
 </script>
 
@@ -72,34 +87,58 @@
     </label>
     <div class="info text-right text-xs text-neutral-400 self-center">
       <div class="inline-flex gap-1.5">
-        <a href={item.link}>
+        <!-- svelte-ignore a11y-no-static-element-interactions -->
+        <a
+          on:mouseover={toolTipInfo}
+          on:mouseout={toolTipInfo}
+          on:focus={toolTipInfo}
+          on:blur={toolTipInfo}
+          href={item.link}
+        >
           <i class="fa-regular fa-circle-question" />
-        </a>
-        {#if item.interval == "daily"}
-          <div class="tooltip-container">
-            <i
-              class="fa-regular fa-clock self-center"
-              aria-describedby={item.id + "Tooltip"}
+          {#if showInfoTooltip}
+            <span
+              transition:fade
+              class="absolute bg-black opacity-80 text-sm mt-4 -ml-16 border border-neutral-600 rounded-lg py-0.5 px-2 text-nowrap text-white"
+              >more info</span
             >
-              <div
-                id={item.id + "Tooltip"}
-                class="tooltip whitespace-nowrap absolute z-10 bg-black text-white rounded-full px-2 py-1 border border-neutral-600 opacity-80 -ml-14"
+          {/if}
+        </a>
+
+        {#if item.interval == "daily"}
+          <!-- svelte-ignore a11y-no-static-element-interactions -->
+          <div
+            on:mouseover={toolTipDaily}
+            on:mouseout={toolTipDaily}
+            on:focus={toolTipDaily}
+            on:blur={toolTipDaily}
+          >
+            <i class="fa-regular fa-clock self-center"> </i>
+            {#if showDailyTooltip}
+              <span
+                transition:fade
+                class="absolute bg-black opacity-80 text-sm mt-4 -ml-20 border border-neutral-600 rounded-lg py-0.5 px-2 text-nowrap text-white"
+                >resets daily</span
               >
-                resets daily
-              </div>
-            </i>
+            {/if}
           </div>
         {/if}
         {#if item.interval == "weekly"}
-          <div class="tooltip-container">
-            <i class="fa-regular fa-calendar">
-              <div
-                id={item.id + "Tooltip"}
-                class="tooltip whitespace-nowrap absolute z-10 bg-red-500 text-white rounded-full px-2 py-1 border border-neutral-600 opacity-80 -ml-14"
+          <!-- svelte-ignore a11y-no-static-element-interactions -->
+          <div
+            on:mouseover={toolTipWeekly}
+            on:mouseout={toolTipWeekly}
+            on:focus={toolTipWeekly}
+            on:blur={toolTipWeekly}
+          >
+            <i class="fa-regular fa-calendar"> </i>
+            {#if showWeeklyTooltip}
+              <span
+                transition:fade
+                class="absolute bg-black opacity-80 text-sm mt-4 -ml-24 border border-neutral-600 rounded-lg py-0.5 px-2 text-nowrap text-white"
+                >resets weekly</span
               >
-                resets weekly
-              </div>
-            </i>
+            {/if}
           </div>
         {/if}
       </div>
@@ -125,13 +164,5 @@
 
   li:has(input:checked) h4 {
     @apply text-xs;
-  }
-
-  .tooltip {
-    display: none;
-  }
-
-  .tooltip-container:hover .tooltip {
-    display: block;
   }
 </style>

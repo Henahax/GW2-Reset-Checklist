@@ -21,18 +21,22 @@
   </button>
 
   <dialog id="settings" class="absolute border rounded-xl border-neutral-500">
-    <div class="inline-flex text-left font-bold text-lg justify-between w-full px-3 py-1">
+    <div
+      class="sticky top-0 inline-flex text-left font-bold text-lg justify-between w-full px-3 py-1 bg-black bg-opacity-50"
+    >
       Displayed items
       <button class="text-2xl hover:scale-110" on:click={show}>
         <i class="fa-solid fa-xmark self-center" />
       </button>
     </div>
-    <div class="settingsContainer px-2">
+
+    <div class="settingsContainer px-2 w-full flex flex-col">
       {#each data as category}
         <SettingsCategory {category} />
       {/each}
     </div>
-    <div class="inline-flex w-full">
+
+    <div class="sticky bottom-0 inline-flex w-full">
       <button
         class="rounded-full bg-neutral-800 py-1 px-6 mx-auto my-4 border border-neutral-500 hover:scale-110"
         on:click={show}>Ok</button
@@ -43,14 +47,13 @@
 
 <style>
   .settingsContainer {
-    columns: 3 16rem;
+    columns: 16rem 3;
   }
 
-  dialog:modal{
-    height: fit-content;
+  dialog:modal {
   }
 
   dialog::backdrop {
-    background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+    background: rgba(0, 0, 0, 0.5);
   }
 </style>
