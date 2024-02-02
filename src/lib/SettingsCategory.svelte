@@ -8,7 +8,7 @@
 <div class="break-inside-avoid pb-4">
   <div class="mx-1">{category.name}</div>
   <ul>
-    {#each category.tasks as item}
+    {#each category.tasks.sort( (a, b) => a.interval.localeCompare(b.interval) ) as item}
       <SettingsItem {item} />
     {/each}
   </ul>
