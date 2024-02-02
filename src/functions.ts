@@ -40,17 +40,24 @@ export function getCookieValue(cookieName: string) {
 export function setCookie(item: Item, type: string, checked: boolean) {
   let time = new Date();
 
-  //In 10 years for settings
-  let expires = time.getTime() + 1000 * 60 * 60 * 24 * 365 * 10;
-  time.setTime(expires);
+  // Calculate expiration time to be 10 years in the future
+  let expires = new Date(time.getTime() + 1000 * 60 * 60 * 24 * 365 * 10);
 
-  if (item.interval === "daily") {
-    time = getUTCTimeForStartOfNextDay();
+  // Update time based on interval and type
+  if (item.interval === "daily" && type === "checked") {
+    time = new Date(getUTCTimeForStartOfNextDay());
   }
-  if (item.interval === "weekly") {
-    time = getUTCTimeForStartOfNextWeek();
+  if (item.interval === "weekly" && type === "checked") {
+    time = new Date(getUTCTimeForStartOfNextWeek());
   }
 
+  // Set cookie with the calculated expiration time
   document.cookie =
-    item.id + type + "=" + checked + ";expires=" + time + ";path=/";
+    item.id +
+    type +
+    "=" +
+    checked +
+    ";expires=" +
+    expires.toUTCString() +
+    ";path=/";
 }
