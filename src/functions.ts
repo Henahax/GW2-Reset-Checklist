@@ -40,8 +40,8 @@ export function getCookieValue(cookieName: string) {
 export function setCookie(item: Item, type: string, checked: boolean) {
   let time = new Date();
 
-  //In 10 years for settings
-  let expires = time.getTime() + 1000 * 60 * 60 * 24 * 365 * 10;
+  // one year
+  let expires = time.getTime() + 1000 * 60 * 60 * 24 * 365;
   time.setTime(expires);
 
   if (item.interval === "daily") {
@@ -53,4 +53,13 @@ export function setCookie(item: Item, type: string, checked: boolean) {
 
   document.cookie =
     item.id + type + "=" + checked + ";expires=" + time + ";path=/";
+}
+
+export function setCookie2(name:string, value:string) {
+  let time = new Date();
+  let expires = time.getTime() + 1000 * 60 * 60 * 24 * 365;
+  time.setTime(expires);
+
+  document.cookie =
+    name + "=" + value + ";expires=" + time + ";path=/";
 }

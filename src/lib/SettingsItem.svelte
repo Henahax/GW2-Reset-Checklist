@@ -9,14 +9,22 @@
     if (checked === null) {
       if (item.default === true) {
         return true;
+      } else {
+        setChecked(false);
+        return false;
       }
-      return false;
+    } else {
+      setChecked(checked);
+      return checked;
     }
-    return checked;
   }
 
-  function setChecked(event) {
-    setCookie(item, ".displayed", event.target.checked);
+  function setSettingCookie(event) {
+    setChecked(event.target.checked);
+  }
+
+  function setChecked(value: boolean) {
+    setCookie(item, ".displayed", value);
   }
 </script>
 
@@ -26,7 +34,7 @@
       type="checkbox"
       class="w-6 h-6 m-1 shrink-0"
       checked={getChecked()}
-      on:click={setChecked}
+      on:click={setSettingCookie}
     />
     <img class="w-6 m-1" src={item.icon} alt={item.name} />
     <div class="text-wrap text-sm">{item.name}</div>
