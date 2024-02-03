@@ -1,17 +1,17 @@
 <script>
   import SettingsCategory from "./SettingsCategory.svelte";
   import data from "../assets/data.json";
-  import {setCookie2, getCookieValue} from "../functions";
+  import { setCookie, getCookieValue } from "../functions";
 
   let revisit = false;
-  if(getCookieValue("revisit") === true){
+  if (getCookieValue("revisit") === true) {
     revisit = true;
   }
 
   let visible = false;
 
   function show() {
-    setCookie2("revisit", true.toString());
+    setCookie("revisit", true.toString(), "");
     visible = !visible;
     if (!visible) {
       document.getElementById("settings").close();
@@ -28,7 +28,11 @@
   </button>
 
   {#if !revisit}
-  <div class="absolute animate-[bounce_4s_infinite] flex justify-between p-4 items-center z-10 h-16 w-56 -ml-48 mt-4 rounded-lg border border-neutral-600 bg-neutral-800">select displayed items<i class="fa-solid fa-arrow-turn-up"></i></div>
+    <div
+      class="absolute animate-[bounce_4s_infinite] flex justify-between p-4 items-center z-10 h-16 w-56 -ml-48 mt-4 rounded-lg border border-neutral-600 bg-neutral-800"
+    >
+      select displayed items<i class="fa-solid fa-arrow-turn-up"></i>
+    </div>
   {/if}
 
   <dialog id="settings" class="border rounded-xl border-neutral-500">
@@ -42,7 +46,10 @@
       </button>
     </div>
     <div id="settingsContainer" class="flex flex-col">
-      <div id="settingItemsContainer" class="px-2 overflow-y-auto overflow-x-hidden">
+      <div
+        id="settingItemsContainer"
+        class="px-2 overflow-y-auto overflow-x-hidden"
+      >
         {#each data as category}
           <SettingsCategory {category} />
         {/each}

@@ -37,7 +37,7 @@
   let checked = getChecked();
 
   function getDisplayed() {
-    let displayed = getCookieValue(item.id + ".displayed");
+    let displayed = getCookieValue("display." + item.id);
     if (displayed === null) {
       if (item.default) {
         return true;
@@ -48,7 +48,7 @@
   }
 
   function getChecked() {
-    let checked = getCookieValue(item.id + ".checked");
+    let checked = getCookieValue("check." + item.id);
     if (checked === null) {
       return false;
     }
@@ -56,8 +56,8 @@
   }
 
   function setChecked(event) {
-    setCookie(item, ".checked", event.target.checked);
     checked = event.target.checked;
+    setCookie("check." + item.id, checked.toString(), item.interval);
     toggle();
     tasksDone();
   }

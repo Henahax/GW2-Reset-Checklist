@@ -5,12 +5,11 @@
   export let item: Item;
 
   function getChecked() {
-    let checked = getCookieValue(item.id + ".displayed");
+    let checked = getCookieValue("display." + item.id);
     if (checked === null) {
       if (item.default === true) {
         return true;
       } else {
-        setChecked(false);
         return false;
       }
     } else {
@@ -24,7 +23,7 @@
   }
 
   function setChecked(value: boolean) {
-    setCookie(item, ".displayed", value);
+    setCookie("display." + item.id, value, "");
   }
 </script>
 

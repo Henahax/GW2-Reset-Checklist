@@ -37,46 +37,22 @@ export function getCookieValue(cookieName: string) {
   return null;
 }
 
-export function setCookie(item: Item, type: string, checked: boolean) {
+export function setCookie(name: string, value: string, interval: string) {
   let time = new Date();
 
-  // one year
-  let expires = time.getTime() + 1000 * 60 * 60 * 24 * 365;
-  time.setTime(expires);
-
-  // Update time based on interval and type
-  if (item.interval === "daily" && type === "checked") {
-    time = new Date(getUTCTimeForStartOfNextDay());
+  switch (interval) {
+    case "daily":
+      time = new Date(getUTCTimeForStartOfNextDay());
+      break;
+    case "weekly":
+      time = new Date(getUTCTimeForStartOfNextWeek());
+      break;
+    default:
+      let expires = time.getTime() + 1000 * 60 * 60 * 24 * 365;
+      time.setTime(expires);
+      break;
   }
-  if (item.interval === "weekly" && type === "checked") {
-    time = new Date(getUTCTimeForStartOfNextWeek());
-  }
-
-  // Set cookie with the calculated expiration time
-  document.cookie =
-    item.id +
-    type +
-    "=" +
-    checked +
-    ";expires=" +
-    expires.toUTCString() +
-    ";path=/";
-}
-
-export function setCookie2(name:string, value:string) {
-  let time = new Date();
-  let expires = time.getTime() + 1000 * 60 * 60 * 24 * 365;
-  time.setTime(expires);
 
   document.cookie =
-    item.id + type + "=" + checked + ";expires=" + time + ";path=/";
-}
-
-export function setCookie2(name:string, value:string) {
-  let time = new Date();
-  let expires = time.getTime() + 1000 * 60 * 60 * 24 * 365;
-  time.setTime(expires);
-
-  document.cookie =
-    name + "=" + value + ";expires=" + time + ";path=/";
+    name + "=" + value + ";expires=" + time.toUTCString() + ";path=/";
 }
