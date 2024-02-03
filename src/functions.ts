@@ -44,12 +44,29 @@ export function setCookie(item: Item, type: string, checked: boolean) {
   let expires = time.getTime() + 1000 * 60 * 60 * 24 * 365;
   time.setTime(expires);
 
-  if (item.interval === "daily") {
-    time = getUTCTimeForStartOfNextDay();
+  // Update time based on interval and type
+  if (item.interval === "daily" && type === "checked") {
+    time = new Date(getUTCTimeForStartOfNextDay());
   }
-  if (item.interval === "weekly") {
-    time = getUTCTimeForStartOfNextWeek();
+  if (item.interval === "weekly" && type === "checked") {
+    time = new Date(getUTCTimeForStartOfNextWeek());
   }
+
+  // Set cookie with the calculated expiration time
+  document.cookie =
+    item.id +
+    type +
+    "=" +
+    checked +
+    ";expires=" +
+    expires.toUTCString() +
+    ";path=/";
+}
+
+export function setCookie2(name:string, value:string) {
+  let time = new Date();
+  let expires = time.getTime() + 1000 * 60 * 60 * 24 * 365;
+  time.setTime(expires);
 
   document.cookie =
     item.id + type + "=" + checked + ";expires=" + time + ";path=/";
