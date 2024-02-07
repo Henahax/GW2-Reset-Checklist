@@ -4,7 +4,7 @@
   import { getCookieValue } from "../functions";
   import { setCookie } from "../functions";
   import { createEventDispatcher } from "svelte";
-  import { fade } from "svelte/transition";
+  import { fade, slide } from "svelte/transition";
 
   let showInfoTooltip = false;
   let showDailyTooltip = false;
@@ -74,18 +74,20 @@
       />
       <img src={item.icon} alt={item.name} class="icon w-8 h-8" />
       <div>
-        <h4 class="text-sm">{item.name}</h4>
+        <h4 class="text-sm">
+          {item.name}
+        </h4>
         {#if !checked}
           <h5
             class="text-xs text-neutral-400"
-            transition:fade={{ duration: 250 }}
+            transition:slide={{ duration: 1000 }}
           >
             {item.info}
           </h5>
         {/if}
       </div>
     </label>
-    <div class="info text-right text-xs text-neutral-400 self-center">
+    <div class="info text-right text-sm text-neutral-400 self-center">
       <div class="inline-flex gap-1.5">
         <!-- svelte-ignore a11y-no-static-element-interactions -->
         <a

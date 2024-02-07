@@ -99,7 +99,7 @@
 </script>
 
 <div
-  class="eventTimer flex flex-col items-end"
+  class="eventTimer flex flex-col items-end text-xs"
   class:text-lime-500={active}
   class:text-yellow-300={soon}
 >

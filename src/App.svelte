@@ -6,7 +6,7 @@
 </script>
 
 <main class="m-auto w-full max-w-screen-2xl flex flex-col h-svh">
-  <header class="inline-flex justify-between w-full gap-4 px-6 py-4">
+  <header class="inline-flex justify-between w-full gap-4 px-4 py-4">
     <div class="text-wrap">
       <h1 class="text-2xl">
         <nobr>Guild Wars 2</nobr> <nobr>Reset Checklist</nobr>
@@ -29,7 +29,7 @@
       <Settings />
     </div>
   </header>
-  <div class="categories gap-4 px-4">
+  <div class="categories gap-4 px-2">
     {#each data as category}
       <Card {category} />
     {/each}
