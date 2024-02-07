@@ -64,23 +64,31 @@
 </script>
 
 {#if displayed}
-  <li class="inline-flex py-1 justify-between gap-2">
+  <li
+    class="inline-flex py-1 justify-between gap-2 {checked
+      ? 'line-through opacity-50'
+      : ''}"
+  >
     <label class="inline-flex items-center gap-4 w-full">
       <input
         type="checkbox"
-        class="w-6 h-6 shrink-0"
+        class="shrink-0 {checked ? 'w-5 h-5 mx-0.5 p-2' : 'w-6 h-6'}"
         {checked}
         on:click={setChecked}
       />
-      <img src={item.icon} alt={item.name} class="icon w-8 h-8" />
+      <img
+        src={item.icon}
+        alt={item.name}
+        class="icon w-8 h-8 {checked ? 'w-8 h-8 p-1' : ''}"
+      />
       <div>
-        <h4 class="text-sm">
+        <h4 class="text-sm {checked ? 'text-xs' : ''}">
           {item.name}
         </h4>
         {#if !checked}
           <h5
             class="text-xs text-neutral-400"
-            transition:slide={{ duration: 1000 }}
+            transition:slide={{ duration: 500 }}
           >
             {item.info}
           </h5>
@@ -150,21 +158,3 @@
     </div>
   </li>
 {/if}
-
-<style>
-  li:has(input:checked) {
-    @apply line-through opacity-50;
-  }
-
-  li:has(input:checked) input {
-    @apply w-5 h-5 mx-0.5 p-2;
-  }
-
-  li:has(input:checked) .icon {
-    @apply w-8 h-8 p-1;
-  }
-
-  li:has(input:checked) h4 {
-    @apply text-xs;
-  }
-</style>
