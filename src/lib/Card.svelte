@@ -37,7 +37,7 @@
 </script>
 
 <div
-  class="card {category.id} border border-neutral-700 rounded-xl bg-stone-900 break-inside-avoid mb-4"
+  class="card {category.id} rounded-xl bg-stone-900 break-inside-avoid mb-4 border border-stone-800"
 >
   <button
     on:click={toggle}
@@ -58,7 +58,7 @@
     <ul
       transition:slide={{ duration: 1000 }}
       class:hidden={closed}
-      class="flex flex-col divide-y divide-zinc-800 px-3 pb-1"
+      class="flex flex-col divide-y divide-stone-800 px-3 pb-1"
     >
       {#each category.tasks.sort( (a, b) => a.interval.localeCompare(b.interval) ) as item}
         <Task {item} on:toggle={toggleAuto} on:tasksDone={tasksDone} />
